@@ -6,7 +6,7 @@
  * Natan Fernandez de Castro - 2017105774
  * Kevin Rojas Salazar - 2016081582
  */
-package natanfdecastro.tiendamascotas.proyectoProgramado2O;
+package model;
 import java.util.Date; // import para utilizar clase Date provista por Java
 
 public abstract class Veterinario extends Persona {
