@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@include file="informes.html" %>
 <html>
     <head>
         <title>Start Page</title>
@@ -13,8 +14,6 @@
     </head>
     
     <body id="body" background="background.png">
-        <h1>Bienvenidos al sistema de informes!</h1>
-        
         
         <%
             //Se descargan los objetos necesarios
