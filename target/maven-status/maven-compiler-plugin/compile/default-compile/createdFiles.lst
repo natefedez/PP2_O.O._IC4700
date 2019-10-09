@@ -1,6 +1,6 @@
 model/Servicio.class
 view/ProyectoOOServlet.class
-view/ComprasServlet.class
+controller/MascotaDAO.class
 model/Veterinario.class
 model/Mascota.class
 model/DuenoMascota.class
