@@ -32,17 +32,22 @@
             
             <form name="form" method="post" action="deployProductos.jsp">
                 
-               <select name="productoSelect">
-                   <%
-                       
-                       for(int i = 0; i<cedulaClientes.length; ++i){
-                        %>
-                            <option value="<%= cedulaClientes[i] %>" selected><%= cedulaClientes[i] %></option>
-                        <%
-                       }
-                   %>
+                <select name="productoSelect">
+                    <option value="Todos" selected>Todos</option>
+                    <%
+
+                        for(int i = 0; i<nombresMascotas.length; ++i){
+                         %>
+                             <option value="<%= nombresMascotas[i] %>"><%= nombresMascotas[i] %></option>
+                         <%
+                        }
+                    %>
+
+                </select>
                    
-               </select>
+                <input name="startSelect" type="date" text="DD/MM/YY">
+                <input name="endSelect" type="date">
+
 
                <input type="submit" value="Buscar" />
             </form>
@@ -58,17 +63,19 @@
             
             <form name="form" method="post" action="deployServicios.jsp">
                 
-               <select id="servicioSelect">
+               <select name="servicioSelect">
                    <%
                        
                        for(int i = 0; i<nombresMascotas.length; ++i){
                         %>
-                            <option value="<%= nombresMascotas[i] %>" selected><%= nombresMascotas[i] %></option>
+                            <option value="<%= nombresMascotas[i] %>"><%= nombresMascotas[i] %></option>
                         <%
                        }
                    %>
                    
                </select>
+                <input name="startSelect" type="date" text="DD/MM/YY">
+                <input name="endSelect" type="date">
 
                <input type="submit" value="Buscar" />
             </form>
@@ -84,12 +91,12 @@
             
             <form name="form" method="post" action="deployMascotas.jsp">
                 
-               <select id="mascotaSelect">
+               <select name="mascotaSelect">
                    <%
                        
                        for(int i = 0; i<cedulaVeterinarios.length; ++i){
                         %>
-                            <option value="<%= cedulaVeterinarios[i] %>" selected><%= cedulaVeterinarios[i] %></option>
+                            <option value="<%= cedulaVeterinarios[i] %>"><%= cedulaVeterinarios[i] %></option>
                         <%
                        }
                    %>
@@ -121,12 +128,12 @@
             
             <form name="form" method="post" action="deployFacturas.jsp">
                 
-               <select id="facturaSelect">
+               <select name="facturaSelect">
                    <%
                        
                        for(int i = 0; i<cedulaClientes.length; ++i){
                         %>
-                            <option value="<%= cedulaClientes[i] %>" selected><%= cedulaClientes[i] %></option>
+                            <option value="<%= cedulaClientes[i] %>"><%= cedulaClientes[i] %></option>
                         <%
                        }
                    %>

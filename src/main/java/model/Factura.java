@@ -8,22 +8,23 @@
  */
 package model;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Factura {
 
     private Date fecha;
-    private Array productos;
-    private Array servicios;
+    private ArrayList<ProductoVendido> productos;
+    private ArrayList<Servicio> servicios;
     
     // Getters para atributos de la clase Factura
     public Date getFecha(){
         return this.fecha;
     }
-    public Array getProductos(){
+    public ArrayList<ProductoVendido> getProductos(){
         return this.productos;
     }
-    public Array getSevicios(){
+    public ArrayList<Servicio> getSevicios(){
         return this.servicios;
     }
     
@@ -31,10 +32,10 @@ public class Factura {
     public void setFecha( Date fecha ){
         this.fecha = fecha;
     }
-    public void setProductos( Array productos ){
+    public void setProductos( ArrayList<ProductoVendido> productos ){
         this.productos = productos;
     }
-    public void setServicios( Array servicios ){
+    public void setServicios( ArrayList<Servicio> servicios ){
         this.servicios = servicios;
     }
 }

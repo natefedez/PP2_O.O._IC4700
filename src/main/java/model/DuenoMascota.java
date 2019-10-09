@@ -8,27 +8,28 @@
  */
 package model;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class DuenoMascota extends Persona {
     
-    private Array mascotas;
-    private Array facturas;
+    private ArrayList<Mascota> mascotas;
+    private ArrayList<Factura> facturas;
     
     DuenoMascota(){};
     
     // Getters para atributos clase DuenoMascota
-    public Array getMascotas(){
+    public ArrayList<Mascota> getMascotas(){
         return this.mascotas;
     }
-    public Array getFacturas(){
-        return this.mascotas;
+    public ArrayList<Factura> getFacturas(){
+        return this.facturas;
     }
     
     // Setters para atributos clase DuenoMascota
-    public void setMascotas(Array mascotas){
+    public void setMascotas(ArrayList<Mascota> mascotas){
         this.mascotas = mascotas;
     }
-    public void setFacturas(Array facturas){
+    public void setFacturas(ArrayList<Factura> facturas){
         this.facturas = facturas;
     }
 }
