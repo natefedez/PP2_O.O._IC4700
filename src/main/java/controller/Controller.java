@@ -8,6 +8,15 @@ import view.CompraDTO;
 
 public class Controller {
     
+    //Se implementa el controlador como un singleton para ser accedido desde los jsp como una sola instancia.
+    private static Controller controllerInstance = null;
+    public static Controller getInstance(){
+        if(controllerInstance == null){
+            controllerInstance = new Controller();
+        }
+        return controllerInstance;
+    }
+    
     MascotaDAO mascotaDAO;
     
     //Devuelve la lista de productos que se vendieron en ese rango de fechas con esa mascota.
@@ -86,9 +95,6 @@ public class Controller {
     //Metodos para implementar CRUD
     
     //Metodos set buscan si el objeto ya existe en la base de datos, de ser asi lo reemplaza, sino lo crea.
-    public void setFactura(Factura nuevaFactura){
-        
-    }
     public void setProducto(Producto nuevoProduto){
         
     }
@@ -126,7 +132,22 @@ public class Controller {
     }
 
     
-    
+    //Metodos delete que eliminan el dato de la base
+    public void deleteProducto(Producto producto){
+        
+    }
+    public void deleteServicio(Servicio servicio){
+        
+    }
+    public void deleteMascota(Mascota mascota){
+        
+    }
+    public void deleteCliente(DuenoMascota cliente){
+        
+    }
+    public void deleteVeterinario(Veterinario veterinario){
+        
+    }
     
     
 }

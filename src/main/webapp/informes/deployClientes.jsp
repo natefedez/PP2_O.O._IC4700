@@ -1,3 +1,4 @@
+<%@page import="controller.Controller"%>
 <%@page import="model.Mascota"%>
 <%@page import="model.DuenoMascota"%>
 <%@page import="java.util.ArrayList"%>
@@ -7,7 +8,8 @@
     <%
         //se leen todos los clientes
         ArrayList<DuenoMascota> duennos = new ArrayList<DuenoMascota>();
-           
+        
+        Controller controller = Controller.getInstance();
     
     %>
     
