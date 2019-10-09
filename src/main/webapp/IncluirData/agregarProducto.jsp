@@ -4,14 +4,34 @@
     Author     : kevinrojas
 --%>
 
+<%@page import="controller.Controller"%>
+<%@page import="model.Producto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Agregar Producto</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Producto agregado</h1>
+        <%
+            String nombre = request.getParameter("nombre");
+            String descripcion = request.getParameter("descripcion");
+            String cantidad = request.getParameter("cantidad");
+            
+            Producto producto = new Producto();
+                
+            producto.setNombre(nombre);
+            producto.setDescripcion(descripcion);
+            producto.setCantidadExistencia(Integer.parseInt(cantidad));
+            
+            Controller.getInstance().setProducto(producto);
+        %>
+        
+        <%= nombre %>
+        <%= descripcion %>
+        <%= cantidad %>
+        
     </body>
 </html>

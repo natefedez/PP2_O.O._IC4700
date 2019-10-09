@@ -101,7 +101,7 @@ public class Controller {
     public void setServicio(Servicio nuevoServicio){
         
     }
-    public void setMascota(Mascota nuevaMascota){
+    public void setMascota(Mascota nuevaMascota, DuenoMascota duenno){
         
     }
     public void setCliente(DuenoMascota nuevoCliente){

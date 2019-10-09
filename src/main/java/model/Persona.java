@@ -8,6 +8,7 @@
  */
 package model;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public abstract class Persona {
     
@@ -15,7 +16,7 @@ public abstract class Persona {
     private String nombre;
     private String apellidos;
     private String direccion;
-    private Array telefonos;
+    private ArrayList<Integer> telefonos;
     
     // Getters para los atributos en la clase Persona
     public int getCedula(){ 
@@ -30,7 +31,7 @@ public abstract class Persona {
     public String getDireccion(){ 
         return this.direccion; 
     }
-    public Array getTelefonos(){ 
+    public ArrayList<Integer> getTelefonos(){ 
         return this.telefonos; 
     }
     
@@ -47,7 +48,7 @@ public abstract class Persona {
     public void setDireccion(String direccion){ 
         this.direccion = direccion; 
     }
-    public void setNombre(Array telefonos){ 
+    public void setTelefonos(ArrayList<Integer> telefonos){ 
         this.telefonos = telefonos; 
     }
 

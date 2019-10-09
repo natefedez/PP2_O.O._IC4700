@@ -4,14 +4,41 @@
     Author     : kevinrojas
 --%>
 
+<%@page import="controller.Controller"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Veterinario"%>
+<%@page import="model.EspecialidadConcreta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Agregar Veterinario</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Veterinario agregado</h1>
+        <%
+            String cedula = request.getParameter("cedula");
+            String nombre = request.getParameter("nombre");
+            String apellidos = request.getParameter("apellidos");
+            String telefono = request.getParameter("telefono");
+                
+            EspecialidadConcreta veterinario = new EspecialidadConcreta();
+            veterinario.setNombre(nombre);
+            veterinario.setApellidos(apellidos);
+            veterinario.setCedula(Integer.parseInt(cedula));
+            
+            ArrayList<Integer> telefonos = new ArrayList<>();
+            telefonos.add(Integer.parseInt(telefono));
+            veterinario.setTelefonos(telefonos);
+            
+            Controller.getInstance().setVeterinario(veterinario);
+        %>
+        
+        <%= cedula %>
+        <%= nombre %>
+        <%= apellidos %>
+        <%= telefono %>
+        
     </body>
 </html>

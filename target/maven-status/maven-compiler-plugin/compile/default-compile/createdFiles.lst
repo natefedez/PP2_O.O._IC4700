@@ -1,14 +1,16 @@
 model/Servicio.class
-view/ProyectoOOServlet.class
 controller/MascotaDAO.class
+view/CompraDTO.class
 model/Veterinario.class
 model/Mascota.class
 model/DuenoMascota.class
 model/ProductoVendido.class
 model/Tienda.class
+model/EspecialidadConcreta.class
 model/Persona.class
 model/Producto.class
 model/Factura.class
 model/Tratamiento.class
+controller/ClienteDAO.class
 controller/Controller.class
 model/Expediente.class

@@ -44,8 +44,8 @@
 
                 </select>
                    
-                <input name="startSelect" type="date" text="DD/MM/YY">
-                <input name="endSelect" type="date">
+                <input name="startSelect" type="date" placeholder="DD/MM/YY">
+                <input name="endSelect" type="date" placeholder="DD/MM/YY">
 
 
                <input type="submit" value="Buscar" />
@@ -73,8 +73,8 @@
                    %>
                    
                </select>
-                <input name="startSelect" type="date" text="DD/MM/YY">
-                <input name="endSelect" type="date">
+                <input name="startSelect" type="date" placeholder="DD/MM/YY">
+                <input name="endSelect" type="date" placeholder="DD/MM/YY">
 
                <input type="submit" value="Buscar" />
             </form>

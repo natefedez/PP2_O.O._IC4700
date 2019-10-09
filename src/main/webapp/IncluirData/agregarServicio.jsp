@@ -4,6 +4,8 @@
     Author     : kevinrojas
 --%>
 
+<%@page import="controller.Controller"%>
+<%@page import="model.Servicio"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +14,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Servicio agregado</h1>
+        <%
+            String nombre = request.getParameter("nombre");
+            Servicio servicio = new Servicio();
+            servicio.setNombre(nombre);
+            
+            Controller.getInstance().setServicio(servicio);
+        %>
+        
+        <%= nombre %>
+
+        
     </body>
 </html>
