@@ -12,6 +12,17 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%
+            String id = request.getParameter("id");
+            String nombre = request.getParameter("nombre");
+
+            
+
+            String html = id + nombre;
+        %>
+        
+        
         <h1>Hello World!</h1>
+        <%= html %>
     </body>
 </html>

@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
 <%@include file="menuBody.html" %>
-<h1>Esta es la seleccion de clientes.</h1>
-<%@include file="../deployJSP/deployClientes.jsp" %>
+<h1>Esta es la seleccion de servicios.</h1>
+<%@include file="../deployJSP/deployServicios.jsp" %>
 
 <html>
     <head>
@@ -26,19 +26,13 @@
                 var cells = rows[i].cells;
                 var cell = rows[i].insertCell(-1);
                 
-                var cedula = cells[0].innerHTML;
+                var id = cells[0].innerHTML;
                 var nombre = cells[1].innerHTML;
-                var apellidos = cells[2].innerHTML;
-                var direccion = cells[3].innerHTML;
-                var telefono = cells[4].innerHTML;
                 
                 cell.innerHTML = ""
-                        + "<form name='form' method='post' action='funcionesBorrar/borrarCliente.jsp'>"
-                        + "<input hidden name='cedula' value='" + cedula + "'>"
+                        + "<form name='form' method='post' action='funcionesBorrar/borrarServicio.jsp'>"
+                        + "<input hidden name='id' value='" + id + "'>"
                         + "<input hidden name='nombre' value='" + nombre + "'>"
-                        + "<input hidden name='apellidos' value='" + apellidos + "'>"
-                        + "<input hidden name='direccion' value='" + direccion + "'>"
-                        + "<input hidden name='telefono' value='" + telefono + "'>"
                         + "<input class='button2' type='submit' value='Borrar'>"
                         + "</form>";
 

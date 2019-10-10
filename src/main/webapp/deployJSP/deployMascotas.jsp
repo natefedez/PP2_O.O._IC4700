@@ -27,8 +27,8 @@
 
 
         String html = " "
-                + "<table border=5 bordercolor=black background=black>"
-                + "<tr>"
+                + "<table border=5 bordercolor=black background=black id='tabla'>"
+                + "<tr id='row'>"
                 + "<th>Id</th>"
                 + "<th>Nombre</th>"
                 + "<th>Tipo de Mascota</th>"
