@@ -36,7 +36,6 @@
                         + "<input class='button2' type='submit' value='Borrar'>"
                         + "</form>";
 
-                
             }
             
 

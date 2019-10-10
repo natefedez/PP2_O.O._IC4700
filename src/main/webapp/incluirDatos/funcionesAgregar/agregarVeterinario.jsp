@@ -30,7 +30,7 @@
             
             ArrayList<Integer> telefonos = new ArrayList<>();
             telefonos.add(Integer.parseInt(telefono));
-            veterinario.setTelefonos(telefonos);
+            veterinario.setTelefono(Integer.parseInt(telefono));
             
             Controller.getInstance().setVeterinario(veterinario);
         %>
