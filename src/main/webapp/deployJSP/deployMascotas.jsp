@@ -1,12 +1,21 @@
+<%-- 
+    Document   : deployMascotas
+    Created on : Oct 9, 2019, 4:21:56 AM
+    Author     : kevinrojas
+--%>
+
+<%@page import="controller.Controller"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Mascota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    
     <%
         //se leen todas las mascotas asociados
         ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
-           
+        
+        mascotas = Controller.getInstance().getAllMascotas();
     
     %>
     
@@ -42,13 +51,10 @@
     %>
     
     <head>
-        <title> Mascotas </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
     </head>
-    
-    <body id="body" background="background.png">
-        <h1>Tabla de todas las mascotas atendidas por <%= selected %></h1>
+    <body>
+        <h1>Hello World!</h1>
     </body>
-    
-    
 </html>

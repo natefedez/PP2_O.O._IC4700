@@ -16,7 +16,7 @@ public abstract class Persona {
     private String nombre;
     private String apellidos;
     private String direccion;
-    private ArrayList<Integer> telefonos;
+    private int telefono;
     
     // Getters para los atributos en la clase Persona
     public int getCedula(){ 
@@ -31,8 +31,8 @@ public abstract class Persona {
     public String getDireccion(){ 
         return this.direccion; 
     }
-    public ArrayList<Integer> getTelefonos(){ 
-        return this.telefonos; 
+    public int getTelefono(){ 
+        return this.telefono; 
     }
     
     // Setters para los atributos en la clase Persona
@@ -48,8 +48,8 @@ public abstract class Persona {
     public void setDireccion(String direccion){ 
         this.direccion = direccion; 
     }
-    public void setTelefonos(ArrayList<Integer> telefonos){ 
-        this.telefonos = telefonos; 
+    public void setTelefono(int telefono){ 
+        this.telefono = telefono; 
     }
 
 }

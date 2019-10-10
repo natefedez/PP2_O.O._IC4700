@@ -9,6 +9,7 @@ model/Tienda.class
 model/EspecialidadConcreta.class
 model/Persona.class
 model/Producto.class
+controller/SimulDB.class
 model/Factura.class
 model/Tratamiento.class
 controller/ClienteDAO.class

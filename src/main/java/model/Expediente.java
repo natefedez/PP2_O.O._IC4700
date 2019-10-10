@@ -11,10 +11,11 @@ import java.lang.reflect.Array;
 
 public class Expediente {
 
+    private int id;
     private Array historialVenta;
     private Array tratamientos;
     
-    Expediente(){};
+    public Expediente(){};
 
     // Getters para atributos de la clase Expediente
     public Array getHistorialVenta(){
@@ -31,5 +32,14 @@ public class Expediente {
     public void setTratamientos( Array tratamientos ){
         this.tratamientos = tratamientos;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     
 }

@@ -8,6 +8,9 @@ import view.CompraDTO;
 
 public class Controller {
     
+    
+    private SimulDB db = new SimulDB(); //Temporal java class for simulating db
+    
     //Se implementa el controlador como un singleton para ser accedido desde los jsp como una sola instancia.
     private static Controller controllerInstance = null;
     public static Controller getInstance(){
@@ -113,22 +116,53 @@ public class Controller {
     
     //Devuelve todos los valores de la base de datos
     public ArrayList<Factura> getAllFacturas(){
-        return null;
+        
+        ArrayList<Factura> facturas = new ArrayList<>();
+        facturas.add(db.facturaA);
+        facturas.add(db.facturaB);
+        
+        return facturas;
     }
     public ArrayList<Producto> getAllProdutos(){
-        return null;
+        
+        ArrayList<Producto> facturas = new ArrayList<>();
+        facturas.add(db.productoA);
+        facturas.add(db.productoB);
+        facturas.add(db.productoC);
+        
+        return facturas;
     }
     public ArrayList<Servicio> getAllServicios(){
-        return null;
+        
+        ArrayList<Servicio> facturas = new ArrayList<>();
+        facturas.add(db.servicio);
+        
+        return facturas;
     }
     public ArrayList<Mascota> getAllMascotas(){
-        return null;
+        
+        ArrayList<Mascota> facturas = new ArrayList<>();
+        facturas.add(db.mascotaA);
+        facturas.add(db.mascotaB);
+        facturas.add(db.mascotaC);
+        facturas.add(db.mascotaD);
+        
+        return facturas;
     }
     public ArrayList<DuenoMascota> getAllClientes(){
-        return null;
+        
+         ArrayList<DuenoMascota> facturas = new ArrayList<>();
+        facturas.add(db.clienteA);
+        facturas.add(db.clienteB);
+        
+        return facturas;
     }
     public ArrayList<Veterinario> getAllVeterinarios(){
-        return null;
+        
+        ArrayList<Veterinario> facturas = new ArrayList<>();
+        facturas.add(db.veterinario);
+        
+        return facturas;
     }
 
     

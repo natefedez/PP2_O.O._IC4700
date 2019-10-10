@@ -9,15 +9,16 @@
 package model;
 import java.util.Date; // import para utilizar clase Date provista por Java
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Tratamiento {
     
     private Date fecha;
     private String descripcion;
     private Veterinario veterinario;
-    private Array listaMedicamentos;
+    private ArrayList<String> listaMedicamentos;
     
-    Tratamiento(){};
+    public Tratamiento(){};
     
     // Getters para atributos de la clase Tratamiento
     public Date getFecha(){ 
@@ -29,7 +30,7 @@ public class Tratamiento {
     public Veterinario getVeterinario(){ 
         return this.veterinario; 
     }
-    public Array getListaMedicamentos(){ 
+    public ArrayList<String> getListaMedicamentos(){ 
         return this.listaMedicamentos; 
     }
     
@@ -43,7 +44,7 @@ public class Tratamiento {
     public void setVeterinario( Veterinario veterinario ){
         this.veterinario = veterinario;
     }
-    public void setListaMedicamentos( Array listaMedicamentos ){
+    public void setListaMedicamentos( ArrayList<String> listaMedicamentos ){
         this.listaMedicamentos = listaMedicamentos; 
     }
  

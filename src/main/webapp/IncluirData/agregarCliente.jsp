@@ -22,9 +22,7 @@
             nuevoDuenno.setApellidos(apellidos);
             nuevoDuenno.setCedula(Integer.parseInt(cedula));
             
-            ArrayList<Integer> telefonos = new ArrayList<>();
-            telefonos.add(Integer.parseInt(telefono));
-            nuevoDuenno.setTelefonos(telefonos);
+            nuevoDuenno.setTelefonos(Integer.parseInt(telefono));
             
             Controller.getInstance().setCliente(nuevoDuenno);
         %>
