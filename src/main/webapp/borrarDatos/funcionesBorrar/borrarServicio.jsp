@@ -18,11 +18,12 @@
 
             
 
-            String html = id + nombre;
+            String html = "El objeto: '" + id + "' '" + nombre + "' ha sido eliminado.";
+            
         %>
         
         
-        <h1>Hello World!</h1>
+        <h1>Eliminado</h1>
         <%= html %>
     </body>
 </html>

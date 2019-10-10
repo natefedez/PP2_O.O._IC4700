@@ -1,9 +1,3 @@
-<%-- 
-    Document   : borrarElemento
-    Created on : Oct 10, 2019, 10:58:54 AM
-    Author     : kevinrojas
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,11 +14,12 @@
             String telefono = request.getParameter("telefono");
             
 
-            String html = cedula + nombre + apellidos + direccion + telefono;
+            String html = "El objeto: '" + cedula + "' '" + nombre + "' '" + apellidos + "' '" + direccion + "' '" + telefono + "' ha sido eliminado.";
+            
         %>
         
         
-        <h1>Hello World!</h1>
+        <h1>Eliminado</h1>
         <%= html %>
     </body>
 </html>

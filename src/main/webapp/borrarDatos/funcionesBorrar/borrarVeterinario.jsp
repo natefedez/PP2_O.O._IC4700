@@ -21,11 +21,12 @@
             String especialidad = request.getParameter("especialidad");
             
 
-            String html = cedula + nombre + apellidos + direccion + telefono + especialidad;
+            String html = "El objeto: '" + cedula + "' '" + nombre + "' '" + apellidos + "' '" + direccion + "' '" + telefono + "' '" + especialidad + "' ha sido eliminado.";
+            
         %>
         
         
-        <h1>Hello World!</h1>
+        <h1>Eliminado</h1>
         <%= html %>
     </body>
 </html>

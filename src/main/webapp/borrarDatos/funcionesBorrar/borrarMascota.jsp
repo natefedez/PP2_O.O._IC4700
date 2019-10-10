@@ -20,11 +20,12 @@
             String expediente = request.getParameter("idExpediente");
             
 
-            String html = id + nombre + tipo + fecha + expediente;
+            String html = "El objeto: '" + id + "' '" + nombre + "' '" + tipo + "' '" + fecha + "' '" + expediente + "' ha sido eliminado.";
+            
         %>
         
         
-        <h1>Hello World!</h1>
+        <h1>Eliminado</h1>
         <%= html %>
     </body>
 </html>

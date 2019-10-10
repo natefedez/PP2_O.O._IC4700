@@ -19,11 +19,12 @@
             String cantidad = request.getParameter("cantidad");
             
 
-            String html = id + nombre + descripcion + cantidad;
+            String html = "El objeto: '" + id + "' '" + nombre + "' '" + descripcion + "' '" + cantidad + "' ha sido eliminado.";
+            
         %>
         
         
-        <h1>Hello World!</h1>
+        <h1>Eliminado</h1>
         <%= html %>
     </body>
 </html>
