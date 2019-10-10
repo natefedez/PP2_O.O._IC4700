@@ -1,9 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
-<%@include file="menuBody.html" %>
-<div  style="padding-left:16px">
-    <h1>Esta es la seleccion de productos.</h1>
+
+<div style="padding-left:16px">
+  <h2>Incluir data</h2>
+  <p>Esta seccion puede agregar un nuevo elemento a cada instancia deseada.</p>
 </div>
 
 <html>
@@ -18,13 +19,13 @@
 
             <form name="form" method="post" action="funcionesAgregar/agregarProducto.jsp">
                 <p>Nombre</p>
-                <input name="nombre" type="date""><br>
+                <input name="nombre" type="date"><br>
 
                 <p>Descripcion</p>
-                <input name="descripcion" type="date""><br>
+                <input name="descripcion" type="date"><br>
 
                 <p>Cantidad en inventario</p>
-                <input name="cantidad" type="date""><br>
+                <input name="cantidad" type="date"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Agregar Producto Nuevo" />

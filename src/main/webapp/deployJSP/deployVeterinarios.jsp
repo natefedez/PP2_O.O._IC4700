@@ -45,7 +45,7 @@
                 + "<td>"+ veterinario.getDireccion()+"</td>"
                 + "<td>"+ veterinario.getTelefono()+"</td>"
                 + "<td>"+ veterinario.getTipo()+"</td>"
-                + "<tr>";
+                + "</tr>";
                 
             }
 

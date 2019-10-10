@@ -1,8 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
-<%@include file="menuBody.html" %>
-<h1>Esta es la seleccion de clientes.</h1>
+
+<div style="padding-left:16px">
+    <h1>Seccion Modificar</h1>
+    <p>En esta pagina se podra eliminar o modificar un elemento de la tabla.</p>
+</div>
+
 <%@include file="../deployJSP/deployClientes.jsp" %>
 
 <html>
@@ -14,17 +18,15 @@
         <script>
             var tabla = document.getElementById("tabla");
             
-            var tablaRow = document.getElementById("row");
-            var newCell = tablaRow.insertCell(-1);
-
-            
             var rows = tabla.rows;
             var lengthRows = rows.length;
             
             for (var i = 1, max = lengthRows; i < max; i++) {
                 
                 var cells = rows[i].cells;
-                var cell = rows[i].insertCell(-1);
+                var cellBorrar = rows[i].insertCell(-1);
+                var cellModificar = rows[i].insertCell(-1);
+                
                 
                 var cedula = cells[0].innerHTML;
                 var nombre = cells[1].innerHTML;
@@ -32,8 +34,8 @@
                 var direccion = cells[3].innerHTML;
                 var telefono = cells[4].innerHTML;
                 
-                cell.innerHTML = ""
-                        + "<form name='form' method='post' action='funcionesBorrar/borrarCliente.jsp'>"
+                cellBorrar.innerHTML = ""
+                        + "<form name='form' method='post' action='../borrarDatos/funcionesBorrar/borrarCliente.jsp'>"
                         + "<input hidden name='cedula' value='" + cedula + "'>"
                         + "<input hidden name='nombre' value='" + nombre + "'>"
                         + "<input hidden name='apellidos' value='" + apellidos + "'>"
@@ -42,6 +44,15 @@
                         + "<input class='button2' type='submit' value='Borrar'>"
                         + "</form>";
 
+                cellModificar.innerHTML = ""
+                        + "<form name='form' method='post' action='../modificarDatos/formularioCliente.jsp'>"
+                        + "<input hidden name='cedula' value='" + cedula + "'>"
+                        + "<input hidden name='nombre' value='" + nombre + "'>"
+                        + "<input hidden name='apellidos' value='" + apellidos + "'>"
+                        + "<input hidden name='direccion' value='" + direccion + "'>"
+                        + "<input hidden name='telefono' value='" + telefono + "'>"
+                        + "<input class='button3' type='submit' value='Modificar'>"
+                        + "</form>";      
                 
             }
             

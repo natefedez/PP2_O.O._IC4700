@@ -1,9 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
-<%@include file="menuBody.html" %>
-<div  style="padding-left:16px">
-    <h1>Esta es la seleccion de clientes.</h1>
+
+<div style="padding-left:16px">
+  <h2>Incluir data</h2>
+  <p>Esta seccion puede agregar un nuevo elemento a cada instancia deseada.</p>
 </div>
 
 <html>
@@ -18,19 +19,19 @@
 
             <form name="form" method="post" action="funcionesAgregar/agregarCliente.jsp">
                 <p>Cedula</p>
-                <input name="cedula" type="date""><br>
+                <input name="cedula" type="date"><br>
 
                 <p>Nombre</p>
-                <input name="nombre" type="date""><br>
+                <input name="nombre" type="date"><br>
 
                 <p>Apellidos</p>
-                <input name="apellidos" type="date""><br>
+                <input name="apellidos" type="date"><br>
 
                 <p>Direccion</p>
-                <input name="direccion" type="date""><br>
+                <input name="direccion" type="date"><br>
 
                 <p>Telefono</p>
-                <input name="telefono" type="date""><br>
+                <input name="telefono" type="date"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Agregar Cliente Nuevo" />
