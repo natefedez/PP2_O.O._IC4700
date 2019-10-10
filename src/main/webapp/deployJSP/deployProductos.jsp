@@ -13,9 +13,10 @@
     <%
         //se leen todos los productos asociados
         
-                
+        
         ArrayList<Producto> productos = new ArrayList<Producto>();
-        productos = Controller.getInstance().getAllProdutos();
+        Controller controller = Controller.getInstance();
+        productos = controller.getAllProdutos();
     
     %>
     
@@ -51,9 +52,10 @@
     
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Productos</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Tabla de todos los productos.</h1>
+        <%= html %>
     </body>
 </html>

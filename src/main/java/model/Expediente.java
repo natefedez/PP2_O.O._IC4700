@@ -7,29 +7,29 @@
  * Kevin Rojas Salazar - 2016081582
  */
 package model;
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Expediente {
 
     private int id;
-    private Array historialVenta;
-    private Array tratamientos;
+    private ArrayList<ProductoVendido> historialVenta;
+    private ArrayList<Tratamiento> tratamientos;
     
     public Expediente(){};
 
     // Getters para atributos de la clase Expediente
-    public Array getHistorialVenta(){
+    public ArrayList<ProductoVendido> getHistorialVenta(){
         return this.historialVenta;
     }
-    public Array getTratamientos(){
+    public  ArrayList<Tratamiento>  getTratamientos(){
         return this.tratamientos;
     }
     
     // Setters para atributos de la clase Expediente
-    public void setHistorialVenta( Array historialVenta ){
+    public void setHistorialVenta( ArrayList<ProductoVendido> historialVenta ){
         this.historialVenta = historialVenta;
     }
-    public void setTratamientos( Array tratamientos ){
+    public void setTratamientos( ArrayList<Tratamiento> tratamientos ){
         this.tratamientos = tratamientos;
     }
 

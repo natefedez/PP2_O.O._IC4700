@@ -49,4 +49,10 @@ public class Mascota {
     public void setFechaNacimiento( Date fechaNacimiento){
         this.fechaNacimiento = fechaNacimiento;
     }   
+
+    public void setExpediente(Expediente expediente) {
+        this.expediente = expediente;
+    }
+    
+    
 }

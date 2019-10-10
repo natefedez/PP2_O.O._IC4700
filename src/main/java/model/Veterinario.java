@@ -12,6 +12,7 @@ import java.util.Date; // import para utilizar clase Date provista por Java
 public abstract class Veterinario extends Persona {
     
     private Date horarioAtencion; // Atributo de tipo Date para el horario de atencion del veterinario
+    private String tipo;
     
     // Get para atributos de clase Veterinario
     public Date getHorarioAtencion(){
@@ -22,6 +23,15 @@ public abstract class Veterinario extends Persona {
     public void setHorarioAtencion( Date horarioAtencion ){
         this.horarioAtencion = horarioAtencion;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
     
     
 }

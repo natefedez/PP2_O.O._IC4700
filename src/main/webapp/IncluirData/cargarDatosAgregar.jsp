@@ -18,7 +18,7 @@
        
         %>
         
-        <a class="button">Cliente</a>
+        <a class="button3">Cliente</a>
         <div class="cliente">
             <form name="form" method="post" action="agregarCliente.jsp">
                 Cedula:<br>
@@ -41,7 +41,7 @@
         
         <br><br><br>
         
-        <a class="button">Mascota</a>
+        <a class="button3">Mascota</a>
         <div class="mascota">
             <form name="form" method="post" action="agregarMascota.jsp">
                 Duenno:<br>
@@ -71,7 +71,7 @@
         
                 <br><br><br>
                 
-        <a class="button">Producto</a>
+        <a class="button3">Producto</a>
             <div class="producto">
             <form name="form" method="post" action="agregarProducto.jsp">
                 Nombre:<br>
@@ -90,7 +90,7 @@
         
         <br><br><br>
         
-        <a class="button">Servicio</a>
+        <a class="button3">Servicio</a>
                 <div class="cliente">
             <form name="form" method="post" action="agregarServicio.jsp">
                 Nombre<br>
@@ -102,7 +102,7 @@
         
         <br><br><br>
         
-        <a class="button">Veterinario</a>
+        <a class="button3">Veterinario</a>
                 <div class="cliente">
             <form name="form" method="post" action="agregarVeterinario.jsp">
                 Cedula:<br>

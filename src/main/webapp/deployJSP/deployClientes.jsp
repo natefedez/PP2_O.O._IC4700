@@ -5,9 +5,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<%@include file="../menuStyle.html" %>
-<%@include file="menuBody.html" %>    
-
 <html>
     <%
         //se leen todos los clientes
@@ -23,20 +20,19 @@
     <%
 
         String html = " "
-                + "<table border=5 bordercolor=black background=black>"
-                + "<tr>"
+                + "<table border=5 bordercolor=black background=black id='tabla'>"
+                + "<tr id='row'>"
                 + "<th>Cedula</th>"
                 + "<th>Nombre</th>"
                 + "<th>Apellidos</th>"
                 + "<th>Direccion</th>"
-                + "<th>Telefonos</th>"
+                + "<th>Telefono</th>"
                 + "</tr>";
         
         
         DuenoMascota duenno;
         for (int i = 0; i < duennos.size(); i++) {
             duenno = duennos.get(i);
-            ArrayList<Mascota> mascotas = duenno.getMascotas();
             
             html+= ""
                 + "<tr>"
@@ -45,7 +41,7 @@
                 + "<td>"+ duenno.getApellidos()+"</td>"
                 + "<td>"+ duenno.getDireccion()+"</td>"
                 + "<td>"+ duenno.getTelefono()+"</td>"
-                + "<tr>";
+                + "</tr>";
                 
             }
 

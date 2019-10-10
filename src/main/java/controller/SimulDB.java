@@ -39,6 +39,7 @@ public class SimulDB {
     public EspecialidadConcreta veterinario = new EspecialidadConcreta();
     
     public Expediente expediente = new Expediente();
+    
             
     
     public SimulDB () {
@@ -46,26 +47,33 @@ public class SimulDB {
         
         
         try {
+            
+
+            
             // ----------------------- MASCOTA---------------------------------------
             mascotaA.setFechaNacimiento(new SimpleDateFormat("dd/MM/yyyy").parse("20/10/2019"));
             mascotaA.setId(0);
             mascotaA.setNombre("Mascotita");
             mascotaA.setTipoMascota("Muy peluda");
+            mascotaA.setExpediente(expediente);
             
             mascotaB.setFechaNacimiento(new SimpleDateFormat("dd/MM/yyyy").parse("20/10/2019"));
             mascotaB.setId(1);
             mascotaB.setNombre("El animal");
             mascotaB.setTipoMascota("Muy poderoso");
+            mascotaB.setExpediente(expediente);
             
             mascotaC.setFechaNacimiento(new SimpleDateFormat("dd/MM/yyyy").parse("20/10/2019"));
             mascotaC.setId(2);
             mascotaC.setNombre("Macota de nombre 001");
             mascotaC.setTipoMascota("Muy alegre");
+            mascotaC.setExpediente(expediente);
             
             mascotaD.setFechaNacimiento(new SimpleDateFormat("dd/MM/yyyy").parse("20/10/2019"));
             mascotaD.setId(3);
             mascotaD.setNombre("Pez");
             mascotaD.setTipoMascota("Sabe volar");
+            mascotaD.setExpediente(expediente);
             // ----------------------- MASCOTAS---------------------------------------
             
             
@@ -167,6 +175,7 @@ public class SimulDB {
             veterinario.setDireccion("Ni el mismo sabe.");
             veterinario.setNombre("La silla sin nombre");
             veterinario.setTelefono(3333333);
+            veterinario.setTipo("Especialidad Concreta");
             
             veterinario.setHorarioAtencion(new SimpleDateFormat("dd/MM/yyyy").parse("20/10/2019"));
             // ----------------------- SERVICIO---------------------------------------
@@ -180,6 +189,17 @@ public class SimulDB {
             tratamiento.setListaMedicamentos(listaMedicamentos);
             tratamiento.setVeterinario(veterinario);
             // ----------------------- TRATAMIENTOS---------------------------------------
+            
+            
+            // ----------------------- PRODUCTOS VENDIDOS---------------------------------------
+            expediente.setHistorialVenta(productos);
+            expediente.setId(0);
+            ArrayList<Tratamiento> tratamientos = new ArrayList<>();
+            tratamientos.add(tratamiento);
+            expediente.setTratamientos(tratamientos);
+            
+            // ----------------------- PRODUCTOS VENDIDOS---------------------------------------
+            
         } catch (ParseException ex) {
             Logger.getLogger(SimulDB.class.getName()).log(Level.SEVERE, null, ex);
         }
