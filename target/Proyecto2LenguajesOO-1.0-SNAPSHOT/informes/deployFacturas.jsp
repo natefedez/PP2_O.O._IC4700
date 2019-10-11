@@ -1,3 +1,4 @@
+<%@page import="controller.Controller"%>
 <%@page import="model.Servicio"%>
 <%@page import="model.ProductoVendido"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -11,9 +12,10 @@
     <%
         //se leen todos los productos asociados
         
-                
         ArrayList<Factura> facturas = new ArrayList<Factura>();
         
+        String cedula = request.getParameter("facturaSelect");
+        facturas = Controller.getInstance().listarFacturas(Integer.parseInt(cedula));
     %>
     
     

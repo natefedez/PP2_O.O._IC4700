@@ -33,30 +33,35 @@ public class Controller {
         return controllerInstance;
     }
  
-
+    //Devuelve la lista de productos que se vendieron en ese rango de fechas.
+    public ArrayList<ProductoVendido> listarProductos(Date fechaInicio, Date fechaFin){
+        
+        return null;
+    }
     
     //Devuelve la lista de productos que se vendieron en ese rango de fechas con esa mascota.
-    public ArrayList<ProductoVendido> listarProductos(Mascota mascota, Date fechaInicio, Date fechaFin){
+    public ArrayList<ProductoVendido> listarProductos(int idMascota, Date fechaInicio, Date fechaFin){
+        
         return null;
     }
     
     //Devuelve una lista de servicios que se le vendieron a esa mascota en ese rango de fechas.
-    public ArrayList<Servicio> listarServicios(Mascota mascota, Date fechaInicio, Date fechaFin){
+    public ArrayList<Servicio> listarServicios(int idMascota, Date fechaInicio, Date fechaFin){
         return null;
     }
     
     //Devuelve lista de todos los clientes en el sistema
     public ArrayList<DuenoMascota> listarClientes(){
-        return null;
+        return this.getAllClientes();
     }
     
     //Devuelve todas las mascotas tratadas por ese veterinario
-    public ArrayList<Mascota> listarMascotas(Veterinario veterinario){
+    public ArrayList<Mascota> listarMascotas(int cedulaVeterinario){
         return null;
     }
     
     //Devuelve todas las facturas de un cliente
-    public ArrayList<Factura> listarFacturas(DuenoMascota duennoMascota){
+    public ArrayList<Factura> listarFacturas(int cedulaCliente){
         return null;
     }
     
@@ -184,19 +189,19 @@ public class Controller {
 
     
     //Metodos delete que eliminan el dato de la base
-    public void deleteProducto(Producto producto){
+    public void deleteProducto(int idProducto){
         
     }
-    public void deleteServicio(Servicio servicio){
+    public void deleteServicio(int idServicio){
         
     }
-    public void deleteMascota(Mascota mascota){
+    public void deleteMascota(int idMascota){
         
     }
-    public void deleteCliente(DuenoMascota cliente){
+    public void deleteCliente(int cedula){
         
     }
-    public void deleteVeterinario(Veterinario veterinario){
+    public void deleteVeterinario(int idVeterinario){
         
     }
     

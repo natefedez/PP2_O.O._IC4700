@@ -1,3 +1,5 @@
+<%@page import="model.ProductoVendido"%>
+<%@page import="controller.Controller"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.ArrayList"%>
@@ -10,37 +12,47 @@
         //se leen todos los productos asociados
         
                 
-        ArrayList<Producto> productos = new ArrayList<Producto>();
+        ArrayList<ProductoVendido> productos = new ArrayList<ProductoVendido>();
         
+        String mascota = request.getParameter("productoSelect");
         //Se capturan el limite de fechas
         String startDateString = request.getParameter("startSelect");
         String endDateString = request.getParameter("endSelect");
         System.out.println(startDateString);
         System.out.println(endDateString);
+        
+        Date start = null;
+        Date end = null;
+            
         if(startDateString == "" && endDateString == ""){
             //Sin filtrado por fecha
 
             
         } else if (endDateString == ""){
             //Filtrado del final en adelante
-            Date end = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
+            end = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
 
             
         } else if (startDateString == ""){
             //Sin filtrado del comienzo en adelante
-            Date end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
+            end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
 
                 
         } else {
             //Filtrado entre fechas
-            Date start = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
-            Date end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
+            start = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
+            end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
    
         }
         
-
+        if(mascota == "Todos"){
+            productos = Controller.getInstance().listarProductos(start, end);
+            
+        } else {
+            productos = Controller.getInstance().listarProductos(Integer.parseInt(mascota), start, end);
+        }
         
-    
+        
     %>
     
     
@@ -56,17 +68,20 @@
                 + "<th>Id</th>"
                 + "<th>Nombre</th>"
                 + "<th>Descripcion</th>"
-                + "<th>Cantidad Existente</th>"
+                + "<th>Cantidad</th>"
+                + "<th>Fecha Compra</th>"
                 + "</tr>";
         
         for (int i = 0; i < productos.size(); i++) {
-            Producto producto = productos.get(i);
+            ProductoVendido productoVendido = productos.get(i);
+            Producto producto = productoVendido.getProducto();
             html+= ""
                 + "<tr>"
                 + "<td>"+ producto.getId() +"</td>"
                 + "<td>"+ producto.getNombre() +"</td>"
                 + "<td>"+ producto.getDescripcion() +"</td>"
-                + "<td>"+ producto.getCantidadExistencia() +"</td>"
+                + "<td>"+ productoVendido.getCantidad() +"</td>"
+                + "<td>"+ productoVendido.getFechaCompra()+"</td>"
                 + "</tr>";
             }
         html+= "</table>";

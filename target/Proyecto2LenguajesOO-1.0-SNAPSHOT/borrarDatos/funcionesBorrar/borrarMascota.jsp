@@ -1,3 +1,4 @@
+<%@page import="controller.Controller"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,7 @@
             
 
             String html = "El objeto: '" + id + "' '" + nombre + "' '" + tipo + "' '" + fecha + "' '" + expediente + "' ha sido eliminado.";
+            Controller.getInstance().deleteMascota(Integer.parseInt(id));
             
         %>
         

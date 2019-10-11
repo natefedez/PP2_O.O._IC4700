@@ -1,3 +1,8 @@
+<%@page import="model.Veterinario"%>
+<%@page import="model.Mascota"%>
+<%@page import="model.DuenoMascota"%>
+<%@page import="controller.Controller"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
@@ -16,10 +21,13 @@
         
         <%
             //Se descargan los objetos necesarios
+            ArrayList<Mascota> mascotas = new ArrayList<>();
+            ArrayList<DuenoMascota> clientes = new ArrayList<>();
+            ArrayList<Veterinario> veterinarios = new ArrayList<>();
             
-            String nombresMascotas [] = {"mascotaA","mascotaB","mascotaC","mascotaD"};
-            String cedulaClientes [] = {"clienteA","clienteB","clienteC","clienteD"};
-            String cedulaVeterinarios [] = {"VeterinarioA","VeterinarioB","VeterinarioC","VeterinarioD"};
+            mascotas = Controller.getInstance().getAllMascotas();
+            clientes = Controller.getInstance().getAllClientes();
+            veterinarios = Controller.getInstance().getAllVeterinarios();
             
         
         %>
@@ -34,9 +42,9 @@
                     <option value="Todos" selected>Todos</option>
                     <%
 
-                        for(int i = 0; i<nombresMascotas.length; ++i){
+                        for(int i = 0; i<mascotas.size(); ++i){
                          %>
-                             <option value="<%= nombresMascotas[i] %>"><%= nombresMascotas[i] %></option>
+                         <option value="<%= mascotas.get(i).getId() %>"><%= mascotas.get(i).getNombre() %></option>
                          <%
                         }
                     %>
@@ -64,9 +72,9 @@
                <select name="servicioSelect">
                    <%
                        
-                       for(int i = 0; i<nombresMascotas.length; ++i){
+                       for(int i = 0; i<mascotas.size(); ++i){
                         %>
-                            <option value="<%= nombresMascotas[i] %>"><%= nombresMascotas[i] %></option>
+                        <option value="<%= mascotas.get(i).getId() %>"><%= mascotas.get(i).getNombre() %></option>
                         <%
                        }
                    %>
@@ -92,9 +100,9 @@
                <select name="mascotaSelect">
                    <%
                        
-                       for(int i = 0; i<cedulaVeterinarios.length; ++i){
+                       for(int i = 0; i<veterinarios.size(); ++i){
                         %>
-                            <option value="<%= cedulaVeterinarios[i] %>"><%= cedulaVeterinarios[i] %></option>
+                        <option value="<%= veterinarios.get(i).getCedula() %>"><%= veterinarios.get(i).getNombre() %></option>
                         <%
                        }
                    %>
@@ -129,9 +137,9 @@
                <select name="facturaSelect">
                    <%
                        
-                       for(int i = 0; i<cedulaClientes.length; ++i){
+                       for(int i = 0; i<clientes.size(); ++i){
                         %>
-                            <option value="<%= cedulaClientes[i] %>"><%= cedulaClientes[i] %></option>
+                        <option value="<%= clientes.get(i).getCedula() %>"><%= clientes.get(i).getNombre() %></option>
                         <%
                        }
                    %>

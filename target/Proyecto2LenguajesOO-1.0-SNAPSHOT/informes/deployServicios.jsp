@@ -1,3 +1,4 @@
+<%@page import="controller.Controller"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="model.Servicio"%>
@@ -10,33 +11,39 @@
                 
         ArrayList<Servicio> servicios = new ArrayList<Servicio>();
         
+        String mascota = request.getParameter("servicioSelect");
+        
         //Se capturan el limite de fechas
         String startDateString = request.getParameter("startSelect");
         String endDateString = request.getParameter("endSelect");
         System.out.println(startDateString);
         System.out.println(endDateString);
+        Date start = null;
+        Date end = null;
+            
         if(startDateString == "" && endDateString == ""){
             //Sin filtrado por fecha
 
             
         } else if (endDateString == ""){
             //Filtrado del final en adelante
-            Date end = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
+            end = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
 
             
         } else if (startDateString == ""){
             //Sin filtrado del comienzo en adelante
-            Date end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
+            end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
 
                 
         } else {
             //Filtrado entre fechas
-            Date start = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
-            Date end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
+            start = new SimpleDateFormat("dd/MM/yyyy").parse(startDateString);
+            end = new SimpleDateFormat("dd/MM/yyyy").parse(endDateString);
    
         }
         
-
+        servicios = Controller.getInstance().listarServicios(Integer.parseInt(mascota), start, end);
+        
         
     
     %>

@@ -1,3 +1,5 @@
+<%@page import="controller.Controller"%>
+<%@page import="model.DuenoMascota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +17,8 @@
             
 
             String html = "El objeto: '" + cedula + "' '" + nombre + "' '" + apellidos + "' '" + direccion + "' '" + telefono + "' ha sido eliminado.";
+            
+            Controller.getInstance().deleteCliente(Integer.parseInt(cedula));
             
         %>
         

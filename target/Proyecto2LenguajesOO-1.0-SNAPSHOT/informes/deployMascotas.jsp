@@ -1,3 +1,4 @@
+<%@page import="controller.Controller"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Mascota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -6,8 +7,9 @@
     <%
         //se leen todas las mascotas asociados
         ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
-           
-    
+        String veterinario = request.getParameter("mascotaSelect");
+        
+        mascotas = Controller.getInstance().listarMascotas(Integer.parseInt(veterinario));
     %>
     
     <%

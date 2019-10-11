@@ -1,3 +1,4 @@
+<%@page import="controller.Controller"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,7 @@
             
 
             String html = "El objeto: '" + id + "' '" + nombre + "' ha sido eliminado.";
+            Controller.getInstance().deleteServicio(Integer.parseInt(id));
             
         %>
         

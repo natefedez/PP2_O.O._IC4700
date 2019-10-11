@@ -8,8 +8,7 @@
     <%
         //se leen todos los clientes
         ArrayList<DuenoMascota> duennos = new ArrayList<DuenoMascota>();
-        
-        Controller controller = Controller.getInstance();
+        duennos = Controller.getInstance().getAllClientes();
     
     %>
     
