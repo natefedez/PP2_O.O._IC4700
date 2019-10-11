@@ -27,8 +27,8 @@
 
 
         String html = " "
-                + "<table border=5 bordercolor=black background=black>"
-                + "<tr>"
+                + "<table border=5 bordercolor=black background=black id='tabla'>"
+                + "<tr id='row'>"
                 + "<th>Id</th>"
                 + "<th>Nombre</th>"
                 + "<th>Tipo de Mascota</th>"
@@ -52,9 +52,10 @@
     
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Mascota</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Tabla de todas las mascotas</h1>
+        <%= html %>
     </body>
 </html>
