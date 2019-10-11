@@ -22,8 +22,8 @@
     <%
 
         String html = " "
-                + "<table border=5 bordercolor=black background=black>"
-                + "<tr>"
+                + "<table border=5 bordercolor=black background=black id='tabla'>"
+                + "<tr id='row'>"
                 + "<th>Cedula</th>"
                 + "<th>Nombre</th>"
                 + "<th>Apellidos</th>"
@@ -45,7 +45,7 @@
                 + "<td>"+ veterinario.getDireccion()+"</td>"
                 + "<td>"+ veterinario.getTelefono()+"</td>"
                 + "<td>"+ veterinario.getTipo()+"</td>"
-                + "<tr>";
+                + "</tr>";
                 
             }
 

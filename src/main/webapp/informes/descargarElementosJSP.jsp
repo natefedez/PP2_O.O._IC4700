@@ -1,14 +1,10 @@
-<%-- 
-    Document   : descargarElementosJSP
-    Created on : Oct 8, 2019, 8:01:29 PM
-    Author     : kevinrojas
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
-<%@include file="menuBody.html" %>    
-
+<div style="padding-left:16px">
+  <h2>Pagina de informes</h2>
+  <p>En esta pagina se listaran los informes.</p>
+</div>
 <html>
     
     <head>

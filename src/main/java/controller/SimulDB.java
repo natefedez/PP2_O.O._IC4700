@@ -33,6 +33,9 @@ public class SimulDB {
     
     
     public Servicio servicio = new Servicio();
+    public Servicio servicioB = new Servicio();
+    public Servicio servicioC = new Servicio();
+    
     
     public Tratamiento tratamiento = new Tratamiento();
     
@@ -113,8 +116,15 @@ public class SimulDB {
             
             
             // ----------------------- SERVICIOS---------------------------------------
-            servicio.setId(0);
+            servicio.setId(96976);
             servicio.setNombre("acariciar");
+            
+            servicioB.setId(2345);
+            servicioB.setNombre("discutir");
+            
+            servicioC.setId(654754);
+            servicioC.setNombre("ver a la pared");
+            
             // ----------------------- SERVICIO---------------------------------------
             
             
