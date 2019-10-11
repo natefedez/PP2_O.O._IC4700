@@ -15,32 +15,16 @@ public class ProductoDAO {
         Connection c;
         Statement stmt;
         
+        String comando = "INSERT INTO ";
+        String atributos = "Producto (IDPRODUCTO,NOMBRE,DESCRIPCION,CANTIDADEXISTENTE) ";
         String valores =  "VALUES (" + idProducto + ", '" + nombre + "', '" + descripcion + "', '"+ cantidadExistente + "' );";
         
+        OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
         
-        try {
-           Class.forName("org.sqlite.JDBC");
-           c = DriverManager.getConnection("jdbc:sqlite:tienda.db");
-           c.setAutoCommit(false);
-           
-           stmt = c.createStatement();
-           
-           String sql = "INSERT INTO Producto (IDPRODUCTO,NOMBRE,DESCRIPCION,CANTIDADEXISTENTE) " + valores; 
-           stmt.executeUpdate(sql);
-           
-           stmt.close();
-           c.commit();
-           c.close();
-        } 
-        catch ( ClassNotFoundException | SQLException e ) {
-           System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-           System.exit(0);
-        }
-        
-        System.out.println("[ Valores insertados EXITOSAMENTE ]");
-    
-    
     }
+    
+    //public static void borrarValoresProducto(int idProducto)
+    
     
     public static void listarProductos(){
     

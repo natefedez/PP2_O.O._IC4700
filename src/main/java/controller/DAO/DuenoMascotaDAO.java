@@ -25,9 +25,23 @@ public class DuenoMascotaDAO {
         String atributos = "DuenoMascota (CEDULA,NOMBRE,APELLIDOS,DIRECCION,TELEFONO) ";
         String valores =  "VALUES (" + cedula + ", '" + nombre + "', '" + apellidos + "', '"+ direccion + "', "+ telefono +" );";
         
-        OperacionesBaseDatos.insertarTabla(comando, atributos, valores);
+        OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
 
     }
+    
+     /*
+    public static void borrarValoresDuenoMascota(int cedula){
+    
+        String comando = "INSERT INTO ";
+        String atributos = "DuenoMascota (CEDULA,NOMBRE,APELLIDOS,DIRECCION,TELEFONO) ";
+        //String valores =  "
+        
+        OperacionesBaseDatos.insertarTabla(comando, atributos, valores);
+        
+    
+    
+    }
+*/
     
     public static void listarDuenosMascota(){
     

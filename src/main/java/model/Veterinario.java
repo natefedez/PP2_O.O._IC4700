@@ -7,20 +7,33 @@
  * Kevin Rojas Salazar - 2016081582
  */
 package model;
+import java.text.DateFormat;  
+import java.text.SimpleDateFormat;   
+import java.util.Calendar;  
 import java.util.Date; // import para utilizar clase Date provista por Java
 
 public abstract class Veterinario extends Persona {
     
+    private String especialidad;
     private Date horarioAtencion; // Atributo de tipo Date para el horario de atencion del veterinario
     private String tipo;
     
     // Get para atributos de clase Veterinario
-    public Date getHorarioAtencion(){
-        return this.horarioAtencion;
+    public String getHorarioAtencion(){
+        
+        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        String strDate = dateFormat.format(horarioAtencion); 
+        
+        return strDate;
+    }
+    public String getEspecialidad(){
+    
+        return this.especialidad;
     }
     
     // Set para atributo de clase Veterinario
     public void setHorarioAtencion( Date horarioAtencion ){
+        
         this.horarioAtencion = horarioAtencion;
     }
 

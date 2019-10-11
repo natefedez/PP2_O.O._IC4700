@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller.DAO;
 
-/**
- *
- * @author windows10
- */
 public class ServicioDAO {
+
+    public static void insertarValoresServicio(int idServicio, String nombre){
+    
+        String comando = "INSERT INTO ";
+        String atributos = "SERVICIO (IDSERVICIO,NOMBRE) ";
+        String valores =  "VALUES (" + idServicio + ", '" + nombre + "');";
+        
+        OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
+    
+    
+    }
     
 }

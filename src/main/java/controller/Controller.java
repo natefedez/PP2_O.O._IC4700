@@ -90,13 +90,21 @@ public class Controller {
     //Metodos para implementar CRUD
     
     //Metodos set buscan si el objeto ya existe en la base de datos, de ser asi lo reemplaza, sino lo crea.
-    public void setProducto(Producto nuevoProduto){
+    public void setProducto(Producto nuevoProducto){
+        
+        ProductoDAO.insertarValoresProducto(nuevoProducto.getId(), nuevoProducto.getNombre(), nuevoProducto.getDescripcion(), nuevoProducto.getCantidadExistencia());
         
     }
     public void setServicio(Servicio nuevoServicio){
         
+        ServicioDAO.insertarValoresServicio(nuevoServicio.getId(), nuevoServicio.getNombre());
+        
     }
     public void setMascota(Mascota nuevaMascota, DuenoMascota duenno){
+        
+        Expediente expediente = nuevaMascota.getExpediente();
+        
+        MascotaDAO.insertarValoresMascota(nuevaMascota.getId(), expediente.getId(), duenno.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
         
     }
     public void setCliente(DuenoMascota nuevoCliente){
@@ -105,6 +113,8 @@ public class Controller {
            
     }
     public void setVeterinario(Veterinario nuevoVeterinario){
+        
+        VeterinarioDAO.insertarValoresVeterinario(nuevoVeterinario.getCedula(), nuevoVeterinario.getNombre(), nuevoVeterinario.getApellidos(), nuevoVeterinario.getDireccion(), nuevoVeterinario.getEspecialidad(), nuevoVeterinario.getHorarioAtencion(), nuevoVeterinario.getTelefono());
         
     }
     
@@ -164,6 +174,8 @@ public class Controller {
     
     //Metodos delete que eliminan el dato de la base
     public void deleteProducto(int idProducto){
+        
+        
         
     }
     public void deleteServicio(int idServicio){

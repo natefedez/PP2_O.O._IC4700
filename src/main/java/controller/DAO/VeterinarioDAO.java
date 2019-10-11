@@ -23,7 +23,7 @@ public class VeterinarioDAO {
         String atributos = "VETERINARIO (CEDULA,NOMBRE,APELLIDOS,DIRECCION,TELEFONO,HORARIOATENCION) ";
         String valores =  "VALUES (" + cedula + ", '" + nombre + "', '" + apellidos + "', '"+ direccion + "', '"+ especialidad +"', '"+ horarioAtencion +"', "+telefono+");";
         
-        OperacionesBaseDatos.insertarTabla(comando, atributos, valores);
+        OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
     }
     
 }

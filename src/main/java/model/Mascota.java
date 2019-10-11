@@ -7,6 +7,8 @@
  * Kevin Rojas Salazar - 2016081582
  */
 package model;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date; // import para utilizar clase Date provista por Java
 
 public class Mascota {
@@ -29,9 +31,14 @@ public class Mascota {
     public String getNombre(){
         return this.nombre;
     }
-    public Date getFechaNacimiento(){
-        return this.fechaNacimiento;
+    public String getFechaNacimiento(){
+        
+        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        String strDate = dateFormat.format(fechaNacimiento); 
+        
+        return strDate;
     }
+    
     public Expediente getExpediente(){
         return this.expediente;
     }

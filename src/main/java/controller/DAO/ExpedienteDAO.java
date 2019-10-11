@@ -1,14 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller.DAO;
 
-/**
- *
- * @author windows10
- */
+import java.sql.Connection;
+import java.sql.Statement;
+
 public class ExpedienteDAO {
+
+    public static void insertarValoresExpediente(){
+        
+        Connection c;
+        Statement stmt;
+        
+        String comando = "INSERT INTO ";
+        String atributos = "EXPEDIENTE (IDEXPEDIENTE) ";
+        String valores =  "VALUES (" + null + ");";
+        
+        OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
+        
+    }
     
 }

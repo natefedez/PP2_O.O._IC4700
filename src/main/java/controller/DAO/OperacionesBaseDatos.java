@@ -67,7 +67,7 @@ public class OperacionesBaseDatos {
             stmt.executeUpdate(sql);
 
             sql = "CREATE TABLE Expediente" +
-                          "(IdExpediente INT PRIMARY KEY NOT NULL)";
+                          "(IdExpediente INTEGER PRIMARY KEY AUTOINCREMENT)";
 
             stmt.executeUpdate(sql);
            
@@ -164,7 +164,7 @@ public class OperacionesBaseDatos {
     
     }
     
-    public static void insertarTabla(String comando, String atributos, String valores){
+    public static void operacionesValoresTabla(String comando, String atributos, String valores){
         
         Connection c;
         Statement stmt;
@@ -189,6 +189,36 @@ public class OperacionesBaseDatos {
         System.out.println("Datos insertados EXITOSAMENTE");
     
     }
+    /*
+    public static void borrarValoresTabla(String comando, String atributos, String valores){
+        
+       Connection c = null;
+       Statement stmt = null;
+      
+       try {
+           Class.forName("org.sqlite.JDBC");
+           c = DriverManager.getConnection("jdbc:sqlite:test.db");
+           c.setAutoCommit(false);
+           System.out.println("Opened database successfully");
+
+           stmt = c.createStatement();
+           //String sql = comando + atributo + ;
+           stmt.executeUpdate(sql);
+           c.commit();
+           
+      
+      stmt.close();
+      c.close();
+      } catch ( Exception e ) {
+         System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+         System.exit(0);
+      }
+      System.out.println("Operation done successfully");
+      */
+    
+    
+    
+    
     
     
 }
