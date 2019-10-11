@@ -1,9 +1,3 @@
-<%-- 
-    Document   : borrarElemento
-    Created on : Oct 10, 2019, 10:58:54 AM
-    Author     : kevinrojas
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -136,6 +136,8 @@ public class Controller {
         
         ArrayList<Servicio> facturas = new ArrayList<>();
         facturas.add(db.servicio);
+        facturas.add(db.servicioB);
+        facturas.add(db.servicioC);
         
         return facturas;
     }
