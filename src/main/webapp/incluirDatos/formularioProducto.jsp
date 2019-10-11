@@ -19,13 +19,13 @@
 
             <form name="form" method="post" action="funcionesAgregar/agregarProducto.jsp">
                 <p>Nombre</p>
-                <input name="nombre" type="date"><br>
+                <input name="nombre"><br>
 
                 <p>Descripcion</p>
-                <input name="descripcion" type="date"><br>
+                <input name="descripcion"><br>
 
                 <p>Cantidad en inventario</p>
-                <input name="cantidad" type="date"><br>
+                <input name="cantidad"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Agregar Producto Nuevo" />
