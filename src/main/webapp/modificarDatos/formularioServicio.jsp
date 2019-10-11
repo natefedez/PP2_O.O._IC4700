@@ -19,7 +19,7 @@
             %>
             <form name="form" method="post" action="funcionesAgregar/agregarServicio.jsp">
                 <p>Nombre</p>
-                <input name="nombre" type="date" value="<%=nombre%>"><br>
+                <input name="nombre" value="<%=nombre%>"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Guardar Cambios" />

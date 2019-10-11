@@ -23,13 +23,13 @@
         
             <form name="form" method="post" action="funcionesAgregar/agregarProducto.jsp">
                 <p>Nombre</p>
-                <input name="nombre" type="date" value="<%=nombre%>"><br>
+                <input name="nombre" value="<%=nombre%>"><br>
 
                 <p>Descripcion</p>
-                <input name="descripcion" type="date" value="<%=descripcion%>"><br>
+                <input name="descripcion" value="<%=descripcion%>"><br>
 
                 <p>Cantidad en inventario</p>
-                <input name="cantidad" type="date" value="<%=cantidad%>"><br>
+                <input name="cantidad" value="<%=cantidad%>"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Guardar Cambios" />
