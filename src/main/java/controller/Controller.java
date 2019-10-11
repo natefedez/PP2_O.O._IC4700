@@ -1,5 +1,9 @@
 package controller;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,6 +25,42 @@ public class Controller {
     }
     
     MascotaDAO mascotaDAO;
+    
+    public static void listarMascotas(){
+    
+       Connection c;
+       Statement stmt;
+       try {
+          Class.forName("org.sqlite.JDBC");
+          c = DriverManager.getConnection("jdbc:sqlite:tienda.db");
+          c.setAutoCommit(false);
+          System.out.println("Opened database successfully");
+          
+          stmt = c.createStatement();
+          ResultSet rs = stmt.executeQuery( "SELECT * FROM Mascota;" );
+ 
+          while ( rs.next() ) {
+             
+             int id = rs.getInt("id");
+             String tipoMascota = rs.getString("tipomascota");
+             String nombre = rs.getString("nombre");
+             String fechaNacimiento = rs.getString("fechaNacimiento");
+
+             System.out.print( "[ ID = " + id );
+             System.out.print( " TIPO MASCOTA = " + tipoMascota );
+             System.out.print( " NAME = " + nombre );
+             System.out.print( " FECHA NACIMIENTO = " + fechaNacimiento + " ]");
+             System.out.println();
+          }
+          rs.close();
+          stmt.close();
+          c.close();
+       } 
+       catch ( Exception e ) {
+          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+          System.exit(0);
+       }
+    }
     
     //Devuelve la lista de productos que se vendieron en ese rango de fechas con esa mascota.
     public ArrayList<ProductoVendido> listarProductos(Mascota mascota, Date fechaInicio, Date fechaFin){

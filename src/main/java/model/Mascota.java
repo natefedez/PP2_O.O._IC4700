@@ -1,4 +1,4 @@
-/*
+ /*
  * Intituto Tecnologico de Costa Rica 
  * Ingeniería en Computacion
  * Lenguajes de Programacion - Semestre 2 - 2019
