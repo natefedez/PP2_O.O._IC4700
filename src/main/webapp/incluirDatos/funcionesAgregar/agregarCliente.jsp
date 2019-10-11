@@ -15,13 +15,14 @@
             String cedula = request.getParameter("cedula");
             String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
+            String direccion = request.getParameter("direccion");
             String telefono = request.getParameter("telefono");
             
             DuenoMascota nuevoDuenno = new DuenoMascota();
             nuevoDuenno.setNombre(nombre);
             nuevoDuenno.setApellidos(apellidos);
             nuevoDuenno.setCedula(Integer.parseInt(cedula));
-            
+            nuevoDuenno.setDireccion(direccion);
             nuevoDuenno.setTelefono(Integer.parseInt(telefono));
             
             Controller.getInstance().setCliente(nuevoDuenno);

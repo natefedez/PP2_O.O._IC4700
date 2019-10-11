@@ -22,14 +22,13 @@
             String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
             String telefono = request.getParameter("telefono");
-                
+            String direccion = request.getParameter("direccion");
+            
             EspecialidadConcreta veterinario = new EspecialidadConcreta();
             veterinario.setNombre(nombre);
             veterinario.setApellidos(apellidos);
             veterinario.setCedula(Integer.parseInt(cedula));
-            
-            ArrayList<Integer> telefonos = new ArrayList<>();
-            telefonos.add(Integer.parseInt(telefono));
+            veterinario.setDireccion(direccion);
             veterinario.setTelefono(Integer.parseInt(telefono));
             
             Controller.getInstance().setVeterinario(veterinario);

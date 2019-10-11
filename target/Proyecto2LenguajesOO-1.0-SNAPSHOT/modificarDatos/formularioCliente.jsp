@@ -28,7 +28,7 @@
             %>
             
             
-            <form name="form" method="post" action="funcionesAgregar/agregarCliente.jsp">
+            <form name="form" method="post" action="../incluirDatos/funcionesAgregar/agregarCliente.jsp">
                 <p>Cedula</p>
                 <input name="cedula" value="<%=cedula%>"><br>
 

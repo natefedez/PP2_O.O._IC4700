@@ -1,9 +1,3 @@
-<%-- 
-    Document   : deployMascotas
-    Created on : Oct 9, 2019, 4:21:56 AM
-    Author     : kevinrojas
---%>
-
 <%@page import="controller.Controller"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Mascota"%>
