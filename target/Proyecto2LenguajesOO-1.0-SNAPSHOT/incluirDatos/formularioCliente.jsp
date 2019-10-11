@@ -19,19 +19,19 @@
 
             <form name="form" method="post" action="funcionesAgregar/agregarCliente.jsp">
                 <p>Cedula</p>
-                <input name="cedula" type="date"><br>
+                <input name="cedula"><br>
 
                 <p>Nombre</p>
-                <input name="nombre" type="date"><br>
+                <input name="nombre"><br>
 
                 <p>Apellidos</p>
-                <input name="apellidos" type="date"><br>
+                <input name="apellidos"><br>
 
                 <p>Direccion</p>
-                <input name="direccion" type="date"><br>
+                <input name="direccion"><br>
 
                 <p>Telefono</p>
-                <input name="telefono" type="date"><br>
+                <input name="telefono"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Agregar Cliente Nuevo" />

@@ -19,10 +19,10 @@
 
             <form name="form" method="post" action="funcionesAgregar/agregarMascota.jsp">
                 <p>Tipo de Mascota</p>
-                <input name="tipo" type="date"><br>
+                <input name="tipo"><br>
 
                 <p>Nombre</p>
-                <input name="nombre" type="date"><br>
+                <input name="nombre"><br>
 
                 <p>Fecha de Nacimiento</p>
                 <input name="fecha" type="date"><br>

@@ -9,58 +9,31 @@ import java.util.Date;
 import java.util.HashMap;
 import model.*;
 import view.CompraDTO;
+import controller.DAO.*;
 
 public class Controller {
+    
+    public Controller(){
+        
+        OperacionesBaseDatos.crearBase();
+        OperacionesBaseDatos.crearTablas();
+        
+    }
     
     
     private SimulDB db = new SimulDB(); //Temporal java class for simulating db
     
     //Se implementa el controlador como un singleton para ser accedido desde los jsp como una sola instancia.
     private static Controller controllerInstance = null;
+    
     public static Controller getInstance(){
         if(controllerInstance == null){
             controllerInstance = new Controller();
         }
         return controllerInstance;
     }
-    
-    MascotaDAO mascotaDAO;
-    
-    public static void listarMascotas(){
-    
-       Connection c;
-       Statement stmt;
-       try {
-          Class.forName("org.sqlite.JDBC");
-          c = DriverManager.getConnection("jdbc:sqlite:tienda.db");
-          c.setAutoCommit(false);
-          System.out.println("Opened database successfully");
-          
-          stmt = c.createStatement();
-          ResultSet rs = stmt.executeQuery( "SELECT * FROM Mascota;" );
  
-          while ( rs.next() ) {
-             
-             int id = rs.getInt("id");
-             String tipoMascota = rs.getString("tipomascota");
-             String nombre = rs.getString("nombre");
-             String fechaNacimiento = rs.getString("fechaNacimiento");
 
-             System.out.print( "[ ID = " + id );
-             System.out.print( " TIPO MASCOTA = " + tipoMascota );
-             System.out.print( " NAME = " + nombre );
-             System.out.print( " FECHA NACIMIENTO = " + fechaNacimiento + " ]");
-             System.out.println();
-          }
-          rs.close();
-          stmt.close();
-          c.close();
-       } 
-       catch ( Exception e ) {
-          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-          System.exit(0);
-       }
-    }
     
     //Devuelve la lista de productos que se vendieron en ese rango de fechas con esa mascota.
     public ArrayList<ProductoVendido> listarProductos(Mascota mascota, Date fechaInicio, Date fechaFin){
@@ -149,6 +122,8 @@ public class Controller {
     }
     public void setCliente(DuenoMascota nuevoCliente){
         
+        DuenoMascotaDAO.insertarValoresDuenoMascota(nuevoCliente.getCedula(), nuevoCliente.getNombre(), nuevoCliente.getApellidos(), nuevoCliente.getDireccion(), nuevoCliente.getTelefono());
+           
     }
     public void setVeterinario(Veterinario nuevoVeterinario){
         

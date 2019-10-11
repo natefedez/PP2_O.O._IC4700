@@ -23,10 +23,10 @@
             
             <form name="form" method="post" action="funcionesAgregar/agregarMascota.jsp">
                 <p>Tipo de Mascota</p>
-                <input name="tipo" type="date" value="<%=tipo%>"><br>
+                <input name="tipo" value="<%=tipo%>"><br>
 
                 <p>Nombre</p>
-                <input name="nombre" type="date" value="<%=nombre%>"><br>
+                <input name="nombre" value="<%=nombre%>"><br>
 
                 <p>Fecha de Nacimiento</p>
                 <input name="fecha" type="date" value="<%=fecha%>"><br>

@@ -18,6 +18,10 @@ public class DuenoMascota extends Persona {
     public DuenoMascota(){
         
     }
+    
+    
+    
+    
     // Getters para atributos clase DuenoMascota
     public ArrayList<Mascota> getMascotas(){
         return this.mascotas;
