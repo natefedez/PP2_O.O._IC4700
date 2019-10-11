@@ -185,7 +185,12 @@
             for (var i = 1, max = tabla.rows.length; i < max; i++) {
                 var cells = rows[i].cells;
                 
-                html += "<input hidden name='id."+i+"/"+ cells[1].innerHTML +"' value='" + cells[1].innerHTML + "'>"
+                if(cells[0] == "Servicio"){
+                    html += "<input hidden name='id.ser"+i+"/"+ cells[1].innerHTML +"' value='" + cells[1].innerHTML + "'>"
+                } else {
+                    html += "<input hidden name='id.pro"+i+"/"+ cells[1].innerHTML +"' value='" + cells[1].innerHTML + "'>"
+                }
+                
                 html += "<input hidden name='quantity."+i+"/"+ cells[3].innerHTML +"' value='" + cells[3].innerHTML + "'>"
                 
             }

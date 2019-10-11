@@ -8,36 +8,19 @@ import model.Servicio;
 import model.Veterinario;
 
 public class CompraDTO {
-    ArrayList<Producto> producto;
+    ArrayList<Integer> productosId;
     ArrayList<Integer> cantidadProducto;
-    ArrayList<Servicio> servicios;
+    ArrayList<Integer> serviciosId;
     
-    Mascota mascota;    
-    DuenoMascota duenno;
-    Veterinario veterinario;
-    
-    private boolean seDioServicio;
+    int cedulaDuenno;
 
-    public CompraDTO(ArrayList<Producto> producto, ArrayList<Integer> cantidadProducto, ArrayList<Servicio> servicios, Mascota mascota, DuenoMascota duenno, Veterinario veterinario, boolean seDioServicio) {
-        this.producto = producto;
-        this.cantidadProducto = cantidadProducto;
-        this.servicios = servicios;
-        this.mascota = mascota;
-        this.duenno = duenno;
-        this.veterinario = veterinario;
-        this.seDioServicio = seDioServicio;
+
+    public ArrayList<Integer> getProductosId() {
+        return productosId;
     }
 
-    public boolean servicio(){
-        return seDioServicio;
-    }
-    
-    public ArrayList<Producto> getProducto() {
-        return producto;
-    }
-
-    public void setProducto(ArrayList<Producto> producto) {
-        this.producto = producto;
+    public void setProductosId(ArrayList<Integer> productosId) {
+        this.productosId = productosId;
     }
 
     public ArrayList<Integer> getCantidadProducto() {
@@ -48,39 +31,20 @@ public class CompraDTO {
         this.cantidadProducto = cantidadProducto;
     }
 
-    public ArrayList<Servicio> getServicios() {
-        return servicios;
+    public ArrayList<Integer> getServiciosId() {
+        return serviciosId;
     }
 
-    public void setServicios(ArrayList<Servicio> servicios) {
-        this.servicios = servicios;
+    public void setServiciosId(ArrayList<Integer> serviciosId) {
+        this.serviciosId = serviciosId;
     }
 
-    public Mascota getMascota() {
-        return mascota;
+    public int getCedulaDuenno() {
+        return cedulaDuenno;
     }
 
-    public void setMascota(Mascota mascota) {
-        this.mascota = mascota;
+    public void setCedulaDuenno(int cedulaDuenno) {
+        this.cedulaDuenno = cedulaDuenno;
     }
-
-    public DuenoMascota getDuenno() {
-        return duenno;
-    }
-
-    public void setDuenno(DuenoMascota duenno) {
-        this.duenno = duenno;
-    }
-
-    public Veterinario getVeterinario() {
-        return veterinario;
-    }
-
-    public void setVeterinario(Veterinario veterinario) {
-        this.veterinario = veterinario;
-    }
-
-    
-    
     
 }

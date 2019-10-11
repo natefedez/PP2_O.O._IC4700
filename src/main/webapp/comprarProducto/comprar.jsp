@@ -1,4 +1,6 @@
 
+<%@page import="controller.Controller"%>
+<%@page import="view.CompraDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,7 +17,8 @@
     
     <%
         Enumeration parametros = request.getParameterNames();
-        ArrayList<String> unidades = new ArrayList<String>();
+        ArrayList<Integer> unidades = new ArrayList<Integer>();
+        ArrayList<Integer> servicios = new ArrayList<Integer>();
         ArrayList<Integer> cantidades = new ArrayList<Integer>();
         
         String cedula = parametros.nextElement().toString();
@@ -25,9 +28,22 @@
             String unidad = parametros.nextElement().toString();
             String cantidad = parametros.nextElement().toString();
             
-            unidades.add(unidad.substring(unidad.lastIndexOf("/")+1));
+            if(unidad.contains("pro")){
+                unidades.add(Integer.parseInt(unidad.substring(unidad.lastIndexOf("/")+1)));
+            } else {
+                servicios.add(Integer.parseInt(unidad.substring(unidad.lastIndexOf("/")+1)));
+            }
             cantidades.add(Integer.parseInt(cantidad.substring(cantidad.lastIndexOf("/")+1)));
             
         }
+        
+        CompraDTO compra = new CompraDTO();
+        compra.setCantidadProducto(cantidades);
+        compra.setCedulaDuenno(Integer.parseInt(cedula));
+        compra.setProductosId(unidades);
+        compra.setServiciosId(servicios);
+        
+        Controller.getInstance().comprar(compra);
+        
     %>
 </html>

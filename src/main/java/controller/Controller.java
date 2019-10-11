@@ -76,42 +76,16 @@ public class Controller {
     En el expediente de la mascota se agregan los servicios, la fecha y el veterinario que lo atendio.
     Asigna una nueva factura al duenno.
     */
-    public boolean comprar(CompraDTO compraDTO){
-        boolean respuesta = false;
-        if(compraDTO.servicio()){
-            //Se compro el servicio y pudo habersen comprado productos
-            respuesta = comprarConServicio(compraDTO);
-        } else {
-            //Se compraron solamente productos sin servicios
-            respuesta = comprarProducto(compraDTO.getDuenno(), compraDTO.getProducto(), compraDTO.getCantidadProducto());
-        }
-        return respuesta;
-    }
-    
-    /*
-    Disminuye la cantidad del inventario.
-    Asigna una nueva factura al duenno.
-    */
-    public boolean comprarProducto(DuenoMascota duennoMascota, ArrayList<Producto> productos, ArrayList<Integer> cantidades){
-        return false;
-    }
-    
-    /*
-    Disminuye la cantidad del inventario.
-    En el expediente de la mascota se agregan los servicios, la fecha y el veterinario que lo atendio.
-    Asigna una nueva factura al duenno.
-    */
-    public boolean comprarConServicio(CompraDTO compraDTO){
-        DuenoMascota duennoMascota = compraDTO.getDuenno();
-        Veterinario veterinario = compraDTO.getVeterinario();
-        Mascota mascota = compraDTO.getMascota();
-        ArrayList<Servicio> servicios = compraDTO.getServicios();
+    public void comprar(CompraDTO compraDTO){
+        ArrayList<Integer> idProductos = compraDTO.getProductosId();
+        ArrayList<Integer> cantidadProductos = compraDTO.getCantidadProducto();
+        ArrayList<Integer> idServicios = compraDTO.getServiciosId();
         
-        ArrayList<Producto> productos = compraDTO.getProducto();
-        ArrayList<Integer> cantidades = compraDTO.getCantidadProducto();
+        int cedula = compraDTO.getCedulaDuenno();
         
-        return false;
+        
     }
+
     
     //Metodos para implementar CRUD
     
