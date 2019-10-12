@@ -48,17 +48,24 @@ public class Mascota {
         this.id = id;
     }
     public void setTipoMascota( String tipoMascota ){
+        
         this.tipoMascota = tipoMascota; 
+        
     }
     public void setNombre( String nombre ){
+        
         this.nombre = nombre;
+        
     }
     public void setFechaNacimiento( Date fechaNacimiento){
+        
         this.fechaNacimiento = fechaNacimiento;
     }   
 
     public void setExpediente(Expediente expediente) {
+        
         this.expediente = expediente;
+        
     }
     
     

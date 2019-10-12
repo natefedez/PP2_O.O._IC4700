@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import model.DuenoMascota;
 
 /**
  *
@@ -29,24 +31,24 @@ public class DuenoMascotaDAO {
 
     }
     
-     /*
+     
     public static void borrarValoresDuenoMascota(int cedula){
     
-        String comando = "INSERT INTO ";
-        String atributos = "DuenoMascota (CEDULA,NOMBRE,APELLIDOS,DIRECCION,TELEFONO) ";
-        //String valores =  "
+        String comando = "DELETE from ";
+        String atributos = "DuenoMascota where ID=";
+        String valores = cedula + ";";
+
         
-        OperacionesBaseDatos.insertarTabla(comando, atributos, valores);
-        
-    
-    
+        OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
+  
     }
-*/
+
     
-    public static void listarDuenosMascota(){
+    public static ArrayList<DuenoMascota> listarDuenosMascota(ArrayList<DuenoMascota> duenosMascotas){
     
             Connection c;
             Statement stmt;
+            
             try {
                Class.forName("org.sqlite.JDBC");
                c = DriverManager.getConnection("jdbc:sqlite:tienda.db");
@@ -58,12 +60,22 @@ public class DuenoMascotaDAO {
 
 
                while ( rs.next() ) {
+                   
+                  DuenoMascota duenoMascota = new DuenoMascota();
 
                   int cedula = rs.getInt("Cedula");
                   String nombre = rs.getString("Nombre");
                   String apellidos = rs.getString("Apellidos");
                   String direccion = rs.getString("Direccion");
                   int telefono = rs.getInt("Telefono");
+                  
+                  duenoMascota.setCedula(cedula);
+                  duenoMascota.setNombre(nombre);
+                  duenoMascota.setApellidos(apellidos);
+                  duenoMascota.setDireccion(direccion);
+                  duenoMascota.setTelefono(telefono);
+                  
+                  duenosMascotas.add(duenoMascota);
 
                   System.out.print( " | CEDULA: " + cedula );
                   System.out.print( " | NOMBRE: " + nombre );
@@ -80,8 +92,9 @@ public class DuenoMascotaDAO {
                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
                System.exit(0);
             }
-       
-
+            
+            return duenosMascotas;
+            
        }    
     
 }

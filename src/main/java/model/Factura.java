@@ -13,11 +13,21 @@ import java.util.Date;
 
 public class Factura {
 
-    private Date fecha;
+    private int idFactura;
+    private int cedula;
+    private Date fecha;   
     private ArrayList<ProductoVendido> productos;
     private ArrayList<Servicio> servicios;
     
     // Getters para atributos de la clase Factura
+    public int getIdFactura(){
+    
+        return this.idFactura;
+    }
+    public int getCedula(){
+    
+        return this.cedula;
+    }
     public Date getFecha(){
         return this.fecha;
     }
@@ -29,6 +39,14 @@ public class Factura {
     }
     
     // Setters para atributos de la clase Factura
+    public void setIdFactura(int idFactura){
+    
+        this.idFactura = idFactura;
+    }
+    public void setCedula(int cedula){
+        
+        this.cedula = cedula;
+    }
     public void setFecha( Date fecha ){
         this.fecha = fecha;
     }

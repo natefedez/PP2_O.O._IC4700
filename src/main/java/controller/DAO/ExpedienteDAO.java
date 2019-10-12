@@ -5,14 +5,14 @@ import java.sql.Statement;
 
 public class ExpedienteDAO {
 
-    public static void insertarValoresExpediente(){
+    public static void insertarValoresExpediente(int idExpediente){
         
         Connection c;
         Statement stmt;
         
         String comando = "INSERT INTO ";
         String atributos = "EXPEDIENTE (IDEXPEDIENTE) ";
-        String valores =  "VALUES (" + null + ");";
+        String valores =  "VALUES (" + idExpediente + ");";
         
         OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
         

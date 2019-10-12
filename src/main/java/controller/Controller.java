@@ -15,8 +15,8 @@ public class Controller {
     
     public Controller(){
         
-        OperacionesBaseDatos.crearBase();
-        OperacionesBaseDatos.crearTablas();
+        //OperacionesBaseDatos.crearBase();
+        //OperacionesBaseDatos.crearTablas();
         
     }
     
@@ -92,19 +92,17 @@ public class Controller {
     //Metodos set buscan si el objeto ya existe en la base de datos, de ser asi lo reemplaza, sino lo crea.
     public void setProducto(Producto nuevoProducto){
         
-        ProductoDAO.insertarValoresProducto(nuevoProducto.getId(), nuevoProducto.getNombre(), nuevoProducto.getDescripcion(), nuevoProducto.getCantidadExistencia());
+        ProductoDAO.insertarValoresProducto(nuevoProducto.getNombre(), nuevoProducto.getDescripcion(), nuevoProducto.getCantidadExistencia());
         
     }
     public void setServicio(Servicio nuevoServicio){
         
-        ServicioDAO.insertarValoresServicio(nuevoServicio.getId(), nuevoServicio.getNombre());
+        ServicioDAO.insertarValoresServicio(nuevoServicio.getNombre());
         
     }
     public void setMascota(Mascota nuevaMascota, DuenoMascota duenno){
-        
-        Expediente expediente = nuevaMascota.getExpediente();
-        
-        MascotaDAO.insertarValoresMascota(nuevaMascota.getId(), expediente.getId(), duenno.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
+
+        MascotaDAO.insertarValoresMascota(duenno.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
         
     }
     public void setCliente(DuenoMascota nuevoCliente){
@@ -122,72 +120,78 @@ public class Controller {
     public ArrayList<Factura> getAllFacturas(){
         
         ArrayList<Factura> facturas = new ArrayList<>();
-        facturas.add(db.facturaA);
-        facturas.add(db.facturaB);
+        
+        FacturaDAO.listarProductos(facturas);
         
         return facturas;
     }
     public ArrayList<Producto> getAllProdutos(){
         
-        ArrayList<Producto> facturas = new ArrayList<>();
-        facturas.add(db.productoA);
-        facturas.add(db.productoB);
-        facturas.add(db.productoC);
+        ArrayList<Producto> productos = new ArrayList<>();
         
-        return facturas;
+        ProductoDAO.listarProductos(productos);
+        
+        return productos;
     }
     public ArrayList<Servicio> getAllServicios(){
         
-        ArrayList<Servicio> facturas = new ArrayList<>();
-        facturas.add(db.servicio);
-        facturas.add(db.servicioB);
-        facturas.add(db.servicioC);
+        ArrayList<Servicio> servicios = new ArrayList<>();
         
-        return facturas;
+        ServicioDAO.listarServicio(servicios);
+        
+        return servicios;
     }
     public ArrayList<Mascota> getAllMascotas(){
         
-        ArrayList<Mascota> facturas = new ArrayList<>();
-        facturas.add(db.mascotaA);
-        facturas.add(db.mascotaB);
-        facturas.add(db.mascotaC);
-        facturas.add(db.mascotaD);
+        ArrayList<Mascota> mascotas = new ArrayList<>();
         
-        return facturas;
+        MascotaDAO.listarMascotas(mascotas);    
+        
+        return mascotas;
     }
     public ArrayList<DuenoMascota> getAllClientes(){
         
-         ArrayList<DuenoMascota> facturas = new ArrayList<>();
-        facturas.add(db.clienteA);
-        facturas.add(db.clienteB);
+        ArrayList<DuenoMascota> duenosMascotas = new ArrayList<>();
         
-        return facturas;
+        DuenoMascotaDAO.listarDuenosMascota(duenosMascotas);
+        
+        return duenosMascotas;
+        
     }
     public ArrayList<Veterinario> getAllVeterinarios(){
         
-        ArrayList<Veterinario> facturas = new ArrayList<>();
-        facturas.add(db.veterinario);
+        ArrayList<Veterinario> veterinarios = new ArrayList<>();
         
-        return facturas;
+        VeterinarioDAO.listarVeterinario(veterinarios);
+        
+        return veterinarios;
     }
 
     
     //Metodos delete que eliminan el dato de la base
     public void deleteProducto(int idProducto){
         
-        
+        ProductoDAO.borrarValoresProducto(idProducto);
         
     }
     public void deleteServicio(int idServicio){
         
+        ServicioDAO.borrarValoresServicio(idServicio);
+        
     }
     public void deleteMascota(int idMascota){
+        
+        MascotaDAO.borrarValoresMascota(idMascota);
         
     }
     public void deleteCliente(int cedula){
         
+        DuenoMascotaDAO.borrarValoresDuenoMascota(cedula);
+        
     }
-    public void deleteVeterinario(int idVeterinario){
+    public void deleteVeterinario(int cedula){
+        
+        VeterinarioDAO.borrarValoresVeterinario(cedula);
         
     }
     
