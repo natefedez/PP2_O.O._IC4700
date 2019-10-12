@@ -1,6 +1,18 @@
-package controller;
+/*
+Instituto Tecnológico de Costa Rica
+Ingeniería en Computación
+Lenguajes de Programación, Semestre 2, 2019
+Práctica Programada #2 
+Paradigma Orientación a Objetos
 
-import java.sql.Connection;
+Natán Fernández de Castro - 2017105774
+Kevin Rojas Salazar - 2016081582
+*/
+
+package controller; // [ Paquete de Proyecto ]
+
+// [ Imports ]
+import java.sql.Connection; 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -11,12 +23,13 @@ import model.*;
 import view.CompraDTO;
 import controller.DAO.*;
 
+
 public class Controller {
     
-    public Controller(){
+    public Controller(){ // Constructor Controlador 
         
-        //OperacionesBaseDatos.crearBase();
-        //OperacionesBaseDatos.crearTablas();
+        OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
+        OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
         
     }
     
@@ -26,11 +39,11 @@ public class Controller {
     //Se implementa el controlador como un singleton para ser accedido desde los jsp como una sola instancia.
     private static Controller controllerInstance = null;
     
-    public static Controller getInstance(){
-        if(controllerInstance == null){
+    public static Controller getInstance(){ // get para hacer instancia del controlador
+        if(controllerInstance == null){ // Caso que la instancia del controlador no se haya hecho, se crea el controlador
             controllerInstance = new Controller();
         }
-        return controllerInstance;
+        return controllerInstance; 
     }
  
     //Devuelve la lista de productos que se vendieron en ese rango de fechas.
@@ -92,26 +105,37 @@ public class Controller {
     //Metodos set buscan si el objeto ya existe en la base de datos, de ser asi lo reemplaza, sino lo crea.
     public void setProducto(Producto nuevoProducto){
         
+        // Inserta valores en la tabla Producto por medio de llama al metodo insertarValoresProducto 
+        // que recibe como parametro nombre, descripcion y cantidad en existencia del producto
         ProductoDAO.insertarValoresProducto(nuevoProducto.getNombre(), nuevoProducto.getDescripcion(), nuevoProducto.getCantidadExistencia());
         
     }
     public void setServicio(Servicio nuevoServicio){
         
+        // Inserta valores en la tabla Servicio por medio de llama al metodo insertarValoresServicio
+        // que recibe como parametro nombre del servicio
         ServicioDAO.insertarValoresServicio(nuevoServicio.getNombre());
         
     }
     public void setMascota(Mascota nuevaMascota, DuenoMascota duenno){
-
+        
+        
+        // Inserta valores en la tabla Producto por medio de llamada al metodo insertarValoresMascota
+        // que recibe como parametro cedula del cliente, tipo de mascota, fecha nacimiento, nombre de la mascota
         MascotaDAO.insertarValoresMascota(duenno.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
         
     }
     public void setCliente(DuenoMascota nuevoCliente){
         
+        // Inserta valores en la tabla Producto por medio de llamada al metodo insertarValoresCliente 
+        // que recibe como parametro cedula. nombre, apellidos, direccion y telefono del CLiente
         DuenoMascotaDAO.insertarValoresDuenoMascota(nuevoCliente.getCedula(), nuevoCliente.getNombre(), nuevoCliente.getApellidos(), nuevoCliente.getDireccion(), nuevoCliente.getTelefono());
            
     }
     public void setVeterinario(Veterinario nuevoVeterinario){
         
+        // Inserta valores en la tabla Producto por medio de llamada al metodo insertarValoresProducto 
+        // que recibe como parametro cedula, nombre, apellidos, direccion, especialidad, horario de atencion y telefono del veterinario
         VeterinarioDAO.insertarValoresVeterinario(nuevoVeterinario.getCedula(), nuevoVeterinario.getNombre(), nuevoVeterinario.getApellidos(), nuevoVeterinario.getDireccion(), nuevoVeterinario.getEspecialidad(), nuevoVeterinario.getHorarioAtencion(), nuevoVeterinario.getTelefono());
         
     }
@@ -119,51 +143,69 @@ public class Controller {
     //Devuelve todos los valores de la base de datos
     public ArrayList<Factura> getAllFacturas(){
         
+        // Crea un nuevo arreglo que contiene objetos tipo Factura
         ArrayList<Factura> facturas = new ArrayList<>();
         
-        FacturaDAO.listarProductos(facturas);
+        // LLama al metodo estatico listarFacturas para hacer un select de lo que contenga la tabla Factura 
+        FacturaDAO.listarFacturas(facturas);
         
+        // Retorna el arreglo con objetos Factura
         return facturas;
     }
     public ArrayList<Producto> getAllProdutos(){
         
+        // Crea un nuevo arreglo que contiene objetos tipo Producto
         ArrayList<Producto> productos = new ArrayList<>();
         
+        // LLamada al metodo estatico listarProductos para hacer un select de lo que contenga la tabla Producto
         ProductoDAO.listarProductos(productos);
         
+        // Retorna el arreglo con objetos Producto
         return productos;
     }
     public ArrayList<Servicio> getAllServicios(){
         
+        // Crea un nuevo arreglo que contiene objetos tipo Servicio
         ArrayList<Servicio> servicios = new ArrayList<>();
         
+        // LLamada al metodo estatico listarServicio para hacer un select de lo que contenga la tabla Servicio
         ServicioDAO.listarServicio(servicios);
         
+        // Retorna el arreglo con objetos Servicio
         return servicios;
     }
     public ArrayList<Mascota> getAllMascotas(){
         
+        // Crea un nuevo arreglo que contiene objetos tipo Mascota
         ArrayList<Mascota> mascotas = new ArrayList<>();
         
+        // LLamada al metodo estatico listarMascota para hacer un select de lo que contenga la tabla Mascota
         MascotaDAO.listarMascotas(mascotas);    
         
+        // Retorna el arreglo con objetos tipo Mascota
         return mascotas;
     }
     public ArrayList<DuenoMascota> getAllClientes(){
         
+        // Crea un nuevo arreglo que contiene objetos tipo 
         ArrayList<DuenoMascota> duenosMascotas = new ArrayList<>();
         
+        // LLamada al metodo estatico listarMascota para hacer un select de lo que contenga la tabla DuenoMascota
         DuenoMascotaDAO.listarDuenosMascota(duenosMascotas);
         
+        // Retorna el arreglo con objetos tipo DuenoMascota
         return duenosMascotas;
         
     }
     public ArrayList<Veterinario> getAllVeterinarios(){
         
+        // Crea un nuevo arreglo que contiene objetos tipo 
         ArrayList<Veterinario> veterinarios = new ArrayList<>();
         
+        // Llamada al metodo estatico listaVeterinarios que hace un select de lo que contenga la tabla Veterinario
         VeterinarioDAO.listarVeterinario(veterinarios);
         
+        // Retorna arreglo con objetos tipo Veterinario
         return veterinarios;
     }
 
@@ -171,26 +213,31 @@ public class Controller {
     //Metodos delete que eliminan el dato de la base
     public void deleteProducto(int idProducto){
         
+        // LLamada al metodo estatico deleteProducto que realiza la operacion de DELETE en la tabla Producto de la Base de Datos TIENDA
         ProductoDAO.borrarValoresProducto(idProducto);
         
     }
     public void deleteServicio(int idServicio){
         
+        // Llamada al metodo estatico deleteServicio que realiza la operacion de DELETE en la tabla SERVICIO de la base de datos TIENDA
         ServicioDAO.borrarValoresServicio(idServicio);
         
     }
     public void deleteMascota(int idMascota){
         
+        // Llamada al metodo estatico deleteMascota que realiza la operacion de DELETE en la tabla Mascota de la base de datos TIENDA
         MascotaDAO.borrarValoresMascota(idMascota);
         
     }
     public void deleteCliente(int cedula){
         
+        // Llamada al metodo estatico deleteCliente que realiza la operacion de DELETE en la tabla CLIENTE de la base de datos TIENDA
         DuenoMascotaDAO.borrarValoresDuenoMascota(cedula);
         
     }
     public void deleteVeterinario(int cedula){
         
+        // Llamada al metodo estatico deleteVeterinario que realiza la operacion de DELETE en la tabla Veterinario de la base de datos TIENDA
         VeterinarioDAO.borrarValoresVeterinario(cedula);
         
     }
