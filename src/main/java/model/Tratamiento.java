@@ -18,9 +18,7 @@ public class Tratamiento {
     private Veterinario veterinario;
     private ArrayList<String> listaMedicamentos;
     
-    public Tratamiento(){
-        listaMedicamentos = new ArrayList<>();
-    };
+    public Tratamiento(){};
     
     // Getters para atributos de la clase Tratamiento
     public Date getFecha(){ 

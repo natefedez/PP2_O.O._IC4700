@@ -16,8 +16,7 @@ public class DuenoMascota extends Persona {
     private ArrayList<Factura> facturas;
         
     public DuenoMascota(){
-        mascotas = new ArrayList<>();
-        facturas = new ArrayList<>();
+        
     }
     
     

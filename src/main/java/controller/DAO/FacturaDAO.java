@@ -36,7 +36,7 @@ public class FacturaDAO {
         
     }
         
-        public static ArrayList<Factura> listarProductos(ArrayList<Factura> facturas){
+        public static ArrayList<Factura> listarFacturas(ArrayList<Factura> facturas){
     
             Connection c;
             Statement stmt;

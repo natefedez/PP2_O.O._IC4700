@@ -185,9 +185,9 @@ public class SimulDB {
             veterinario.setDireccion("Ni el mismo sabe.");
             veterinario.setNombre("La silla sin nombre");
             veterinario.setTelefono(3333333);
-            veterinario.setEspecialidad("Especialidad Concreta");
+            veterinario.setTipo("Especialidad Concreta");
             
-            veterinario.setHorarioAtencion("");
+            veterinario.setHorarioAtencion(new SimpleDateFormat("dd/MM/yyyy").parse("20/10/2019"));
             // ----------------------- SERVICIO---------------------------------------
             
             
