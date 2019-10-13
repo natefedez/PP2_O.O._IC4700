@@ -28,8 +28,8 @@ public class Controller {
     
     public Controller(){ // Constructor Controlador 
         
-        OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
-        OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
+        //OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
+        //OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
         
     }
     
