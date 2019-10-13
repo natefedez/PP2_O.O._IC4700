@@ -19,7 +19,9 @@ public class Mascota {
     private Date fechaNacimiento;
     private Expediente expediente;
     
-    public Mascota(){};
+    public Mascota(){
+        
+    };
     
     // Getters para atributos de la clase Mascota
     public int getId(){

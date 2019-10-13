@@ -100,9 +100,9 @@ public class Controller {
         ServicioDAO.insertarValoresServicio(nuevoServicio.getNombre());
         
     }
-    public void setMascota(Mascota nuevaMascota, DuenoMascota duenno){
+    public void setMascota(Mascota nuevaMascota, int cedula){
 
-        MascotaDAO.insertarValoresMascota(duenno.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
+        MascotaDAO.insertarValoresMascota(cedula, nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
         
     }
     public void setCliente(DuenoMascota nuevoCliente){

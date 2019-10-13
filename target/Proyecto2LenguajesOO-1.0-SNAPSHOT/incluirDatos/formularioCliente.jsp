@@ -1,3 +1,6 @@
+<%@page import="controller.Controller"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.DuenoMascota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="../menuStyle.html" %>
@@ -12,14 +15,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Agregar Cliente</title>
     </head>
+
     
     <body>
         <div class="center" style="padding-left:16px">
-            <h1>Formulario de cliente nuevo</h1>
+            <h1>Formulário de cliente nuevo</h1>
 
             <form name="form" method="post" action="funcionesAgregar/agregarCliente.jsp">
-                <p>Cedula</p>
-                <input name="cedula"><br>
+                <p>Cedula (9 Dígitos Máximo)</p>
+                <input name="cedula" placeholder="xxxxxxxxx"><br>
 
                 <p>Nombre</p>
                 <input name="nombre"><br>
@@ -30,10 +34,8 @@
                 <p>Direccion</p>
                 <input name="direccion"><br>
 
-                <p>Telefono</p>
-                <input name="telefono"><br>
-
-                
+                <p>Telefono (8 Dígitos Máximo)</p>
+                <input name="telefono" placeholder="xxxxxxxx"><br>
                 <br><br><input class="button1" type="submit" value="Agregar Cliente Nuevo" />
             </form>
         </div>

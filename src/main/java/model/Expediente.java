@@ -15,7 +15,11 @@ public class Expediente {
     private ArrayList<ProductoVendido> historialVenta;
     private ArrayList<Tratamiento> tratamientos;
     
-    public Expediente(){};
+    public Expediente(){
+        historialVenta = new ArrayList<>();
+        tratamientos = new ArrayList<>();
+        
+    };
 
     // Getters para atributos de la clase Expediente
     public ArrayList<ProductoVendido> getHistorialVenta(){

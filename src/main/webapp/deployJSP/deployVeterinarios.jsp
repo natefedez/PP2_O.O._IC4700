@@ -30,6 +30,7 @@
                 + "<th>Direccion</th>"
                 + "<th>Telefonos</th>"
                 + "<th>Especialidad</th>"
+                + "<th>Horario de atencion</th>"
                 + "</tr>";
         
         
@@ -44,7 +45,8 @@
                 + "<td>"+ veterinario.getApellidos()+"</td>"
                 + "<td>"+ veterinario.getDireccion()+"</td>"
                 + "<td>"+ veterinario.getTelefono()+"</td>"
-                + "<td>"+ veterinario.getTipo()+"</td>"
+                + "<td>"+ veterinario.getEspecialidad()+"</td>"
+                + "<td>"+ veterinario.getHorarioAtencion()+"</td>"
                 + "</tr>";
                 
             }
