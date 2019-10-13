@@ -18,8 +18,8 @@
             <h1>Formulario de cliente nuevo</h1>
 
             <form name="form" method="post" action="funcionesAgregar/agregarCliente.jsp">
-                <p>Cedula</p>
-                <input name="cedula"><br>
+                <p>Cedula (9 digitos)</p>
+                <input name="cedula" placeholder="xxxxxxxxx"><br>
 
                 <p>Nombre</p>
                 <input name="nombre"><br>
@@ -30,8 +30,8 @@
                 <p>Direccion</p>
                 <input name="direccion"><br>
 
-                <p>Telefono</p>
-                <input name="telefono"><br>
+                <p>Telefono (8 digitos)</p>
+                <input name="telefono" placeholder="xxxxxxxx"><br>
 
                 
                 <br><br><input class="button1" type="submit" value="Agregar Cliente Nuevo" />

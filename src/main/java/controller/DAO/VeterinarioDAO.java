@@ -67,11 +67,10 @@ public class VeterinarioDAO {
                   String apellidos = rs.getString("Apellidos");
                   String direccion = rs.getString("Direccion");
                   String especialidad = rs.getString("Especialidad");
-                  String sHorarioAtencion = rs.getString("FechaAtencion");
+                  String horarioAtencion = rs.getString("HorarioAtencion");
                   int telefono = rs.getInt("Telefono");
                   
-                  Date horarioAtencion = new SimpleDateFormat("dd/MM/yyyy").parse(sHorarioAtencion);
-                  
+                 
                   vet.setCedula(cedula);
                   vet.setNombre(nombre);
                   vet.setApellidos(apellidos);

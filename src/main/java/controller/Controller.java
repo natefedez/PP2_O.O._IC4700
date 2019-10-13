@@ -28,8 +28,8 @@ public class Controller {
     
     public Controller(){ // Constructor Controlador 
         
-        OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
-        OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
+        //OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
+        //OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
         
     }
     
@@ -117,12 +117,12 @@ public class Controller {
         ServicioDAO.insertarValoresServicio(nuevoServicio.getNombre());
         
     }
-    public void setMascota(Mascota nuevaMascota, DuenoMascota duenno){
+    public void setMascota(Mascota nuevaMascota, int cedula){
         
         
         // Inserta valores en la tabla Producto por medio de llamada al metodo insertarValoresMascota
         // que recibe como parametro cedula del cliente, tipo de mascota, fecha nacimiento, nombre de la mascota
-        MascotaDAO.insertarValoresMascota(duenno.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
+        MascotaDAO.insertarValoresMascota(cedula, nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
         
     }
     public void setCliente(DuenoMascota nuevoCliente){

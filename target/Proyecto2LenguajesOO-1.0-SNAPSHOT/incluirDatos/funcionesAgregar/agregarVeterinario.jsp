@@ -23,6 +23,9 @@
             String apellidos = request.getParameter("apellidos");
             String telefono = request.getParameter("telefono");
             String direccion = request.getParameter("direccion");
+            String especialidad = request.getParameter("especialidad");
+            String horarioAtencion = request.getParameter("horario");
+            
             
             EspecialidadConcreta veterinario = new EspecialidadConcreta();
             veterinario.setNombre(nombre);
@@ -30,6 +33,9 @@
             veterinario.setCedula(Integer.parseInt(cedula));
             veterinario.setDireccion(direccion);
             veterinario.setTelefono(Integer.parseInt(telefono));
+            veterinario.setHorarioAtencion(horarioAtencion);
+            veterinario.setEspecialidad(especialidad);
+            
             
             Controller.getInstance().setVeterinario(veterinario);
         %>
