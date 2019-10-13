@@ -17,7 +17,7 @@
             
 
             String html = "El objeto: '" + cedula + "' '" + nombre + "' '" + apellidos + "' '" + direccion + "' '" + telefono + "' '" + especialidad + "' ha sido eliminado.";
-            Controller.getInstance().deleteVeterinario(Integer.parseInt(id));
+            Controller.getInstance().deleteVeterinario(Integer.parseInt(cedula));
             
         %>
         

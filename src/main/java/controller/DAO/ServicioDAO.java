@@ -30,7 +30,7 @@ public class ServicioDAO {
     
     }
     
-    public static void borrarValoresServicio(int idServicio){
+    public static void borrarValoresServicio(String idServicio){
     
         String comando = "DELETE from ";
         String atributos = "Servicio where ID=";

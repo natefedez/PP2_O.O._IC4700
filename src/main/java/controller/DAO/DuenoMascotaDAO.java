@@ -46,7 +46,7 @@ public class DuenoMascotaDAO { // Clase DuenoMascotaDAO, tiene como funcion real
     }
     
      
-    public static void borrarValoresDuenoMascota(int cedula){
+    public static void borrarValoresDuenoMascota(String cedula){
         
         // Metodo estatico que tiene como funcion borrar los datos de la tabla DuenoMascota segun un id especificado
         // Entradas: cedula (Entero)

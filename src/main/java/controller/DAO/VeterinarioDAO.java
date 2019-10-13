@@ -32,11 +32,11 @@ public class VeterinarioDAO {
         OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
     }
     
-    public static void borrarValoresVeterinario(int cedula){
+    public static void borrarValoresVeterinario(String cedula){
     
         String comando = "DELETE from ";
         String atributos = "Veterinario where ID=";
-        String valores = cedula + ";";
+        String valores = "'"+ cedula + "';";
 
         
         OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);

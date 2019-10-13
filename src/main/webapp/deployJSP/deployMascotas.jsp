@@ -29,12 +29,13 @@
                 + "<th>Fecha de Nacimiento</th>"
                 + "<th>Id del expediente</th>"
                 + "</tr>";
-                
+             
+        Mascota mascota = new Mascota();
         for (int i = 0; i < mascotas.size(); i++) {
-            Mascota mascota = mascotas.get(i);
+             mascota = mascotas.get(i);
             html+= ""
                 + "<tr>"
-                + "<td>"+ mascota.getId() +"</td>"
+                + "<td>"+ mascota.getId()+"</td>"
                 + "<td>"+ mascota.getNombre()+"</td>"
                 + "<td>"+ mascota.getTipoMascota()+"</td>"
                 + "<td>"+ mascota.getFechaNacimiento()+"</td>"

@@ -26,11 +26,13 @@
                 + "</tr>";
         
         String mascotahtml = "";
-        DuenoMascota duenno;
-        Mascota mascota;
+        DuenoMascota duenno = new DuenoMascota();
+        Mascota mascota = new Mascota();
+        ArrayList<Mascota> mascotas = new ArrayList<>();
+        
         for (int i = 0; i < duennos.size(); i++) {
             duenno = duennos.get(i);
-            ArrayList<Mascota> mascotas = duenno.getMascotas();
+             mascotas = duenno.getMascotas();
             
             html+= ""
                 + "<tr>"

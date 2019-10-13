@@ -26,8 +26,7 @@ import controller.DAO.*;
 
 public class Controller {
     
-    public Controller(){ // Constructor Controlador 
-        
+    public Controller(){ // Constructor Controlador    
         //OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
         //OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
         
@@ -212,34 +211,72 @@ public class Controller {
     
     //Metodos delete que eliminan el dato de la base
     public void deleteProducto(int idProducto){
-        
+
         // LLamada al metodo estatico deleteProducto que realiza la operacion de DELETE en la tabla Producto de la Base de Datos TIENDA
-        ProductoDAO.borrarValoresProducto(idProducto);
+        ProductoDAO.borrarValoresProducto(Integer.toString(idProducto));
         
     }
     public void deleteServicio(int idServicio){
-        
         // Llamada al metodo estatico deleteServicio que realiza la operacion de DELETE en la tabla SERVICIO de la base de datos TIENDA
-        ServicioDAO.borrarValoresServicio(idServicio);
+        ServicioDAO.borrarValoresServicio(Integer.toString(idServicio));
         
     }
     public void deleteMascota(int idMascota){
-        
         // Llamada al metodo estatico deleteMascota que realiza la operacion de DELETE en la tabla Mascota de la base de datos TIENDA
-        MascotaDAO.borrarValoresMascota(idMascota);
+        MascotaDAO.borrarValoresMascota(Integer.toString(idMascota));
         
     }
     public void deleteCliente(int cedula){
-        
         // Llamada al metodo estatico deleteCliente que realiza la operacion de DELETE en la tabla CLIENTE de la base de datos TIENDA
-        DuenoMascotaDAO.borrarValoresDuenoMascota(cedula);
+        DuenoMascotaDAO.borrarValoresDuenoMascota(Integer.toString(cedula));
         
     }
     public void deleteVeterinario(int cedula){
         
         // Llamada al metodo estatico deleteVeterinario que realiza la operacion de DELETE en la tabla Veterinario de la base de datos TIENDA
-        VeterinarioDAO.borrarValoresVeterinario(cedula);
+        VeterinarioDAO.borrarValoresVeterinario(Integer.toString(cedula));
         
+    }
+
+    
+    //Metodos upgrade buscan un match en la base con el ide, borra datos y agrega de nuevo.
+//Metodos upgrades que modifican el dato de la base
+    public void upgradeProducto(Producto producto){
+        deleteProducto(producto.getId());
+        setProducto(producto);
+    }
+    
+    public void upgradeServicio(Servicio servicio){
+        deleteServicio(servicio.getId());
+        setServicio(servicio);
+    }
+    public void upgradeMascota(Mascota mascota){
+
+        ArrayList<DuenoMascota> clientes = this.getAllClientes();
+        ArrayList<Mascota> mascotas = null;
+
+        int cedula = 888888888;
+        for (int i = 0; i < clientes.size(); i++) {
+            mascotas = clientes.get(i).getMascotas();
+
+            for (int j = 0; j < mascotas.size(); j++) {
+                if(mascotas.get(j).getId() == mascota.getId()){
+                    cedula = clientes.get(i).getCedula();
+                }
+            }
+        }
+        deleteMascota(mascota.getId());
+        setMascota(mascota, 0);
+    }
+    
+    public void upgradeCliente(DuenoMascota cliente){
+        deleteCliente(cliente.getCedula());
+        setCliente(cliente);
+    }
+    
+    public void upgradeVeterinario(Veterinario veterinario){
+        deleteVeterinario(veterinario.getCedula());
+        setVeterinario(veterinario);
     }
     
     
