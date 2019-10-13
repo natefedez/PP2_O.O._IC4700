@@ -196,4 +196,44 @@ public class Controller {
     }
     
     
+    //Metodos upgrades que modifican el dato de la base
+    public void upgradeProducto(Producto producto){
+        
+        deleteProducto(producto.getId());
+        setProducto(producto);
+        
+    }
+    public void upgradeServicio(Servicio servicio){
+        
+        deleteServicio(servicio.getId());
+        setServicio(servicio);
+    }
+    public void upgradeMascota(Mascota mascota){
+        
+        ArrayList<DuenoMascota> clientes = this.getAllClientes();
+        ArrayList<Mascota> mascotas = null;
+        
+        for (int i = 0; i < clientes.size(); i++) {
+            mascotas = clientes.get(i).getMascotas();
+            
+            for (int j = 0; j < mascotas.size(); j++) {
+                mascotas.get(j);
+            }
+        }
+        deleteMascota(mascota.getId());
+        setMascota(mascota, 0);
+    }
+    public void upgradeCliente(DuenoMascota cliente){
+        
+        deleteCliente(cliente.getCedula());
+        setCliente(cliente);
+        
+    }
+    public void upgradeVeterinario(Veterinario veterinario){
+        
+        deleteVeterinario(veterinario.getCedula());
+        setVeterinario(veterinario);
+    }
+    
+    
 }
