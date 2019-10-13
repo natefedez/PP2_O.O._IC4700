@@ -19,6 +19,11 @@ public class Factura {
     private ArrayList<ProductoVendido> productos;
     private ArrayList<Servicio> servicios;
     
+    public Factura(){
+        productos = new ArrayList<>();
+        servicios = new ArrayList<>();
+        
+    }
     // Getters para atributos de la clase Factura
     public int getIdFactura(){
     

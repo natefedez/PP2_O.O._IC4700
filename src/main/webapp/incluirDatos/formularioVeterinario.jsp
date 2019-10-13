@@ -19,8 +19,8 @@
 
             
             <form name="form" method="post" action="funcionesAgregar/agregarVeterinario.jsp">
-                <p>Cedula</p>
-                <input name="cedula"><br>
+                <p>Cedula (9 Dígitos Máximo)</p>
+                <input name="cedula" placeholder="xxxxxxxxx"><br>
 
                 <p>Nombre</p>
                 <input name="nombre"><br>
@@ -31,11 +31,15 @@
                 <p>Direccion</p>
                 <input name="direccion"><br>
 
-                <p>Telefono</p>
-                <input name="telefono"><br>
+                <p>Telefono (8 Dígitos Máximo)</p>
+                <input name="telefono" placeholder="xxxxxxxx"><br>
 
                 <p>Especialidad</p>
                 <input name="especialidad"><br>
+                
+                <p>Horario de atencion</p>
+                <input name="horario" placeholder="d-d hh:mm - hh:mm"><br>
+                
 
                 
                 <br><br><input class="button1" type="submit" value="Agregar Veterinario Nuevo" />
