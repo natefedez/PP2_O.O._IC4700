@@ -38,7 +38,7 @@ public class ProductoDAO {
     public static void borrarValoresProducto(String idProducto){
         
         String comando = "DELETE from ";
-        String atributos = "Producto where ID=";
+        String atributos = "Producto where IDPRODUCTO=";
         String valores = idProducto + ";";
 
         

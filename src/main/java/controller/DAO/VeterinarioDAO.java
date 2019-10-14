@@ -27,7 +27,7 @@ public class VeterinarioDAO {
         
         String comando = "INSERT INTO ";
         String atributos = "VETERINARIO (CEDULA,NOMBRE,APELLIDOS,DIRECCION,ESPECIALIDAD,HORARIOATENCION,TELEFONO) ";
-        String valores =  "VALUES (" + cedula + ", '" + nombre + "', '" + apellidos + "', '"+ direccion + "', '"+ especialidad +"', '"+ horarioAtencion +"', "+telefono+");";
+        String valores =  "VALUES ('"+ cedula + "', '" + nombre + "', '" + apellidos + "', '"+ direccion + "', '"+ especialidad +"', '"+ horarioAtencion +"', "+telefono+");";
         
         OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
     }
@@ -35,7 +35,7 @@ public class VeterinarioDAO {
     public static void borrarValoresVeterinario(String cedula){
     
         String comando = "DELETE from ";
-        String atributos = "Veterinario where ID=";
+        String atributos = "Veterinario where CEDULA=";
         String valores = "'"+ cedula + "';";
 
         

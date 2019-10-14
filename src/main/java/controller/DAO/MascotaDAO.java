@@ -54,7 +54,7 @@ public class MascotaDAO {
     public static void borrarValoresMascota(String idMascota){
     
         String comando = "DELETE from ";
-        String atributos = "MASCOTA where ID=";
+        String atributos = "MASCOTA where IDMASCOTA=";
         String valores = idMascota + ";";
 
         

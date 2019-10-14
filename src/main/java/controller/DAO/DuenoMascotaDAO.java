@@ -57,7 +57,7 @@ public class DuenoMascotaDAO { // Clase DuenoMascotaDAO, tiene como funcion real
         String comando = "DELETE from ";
         
         // Variable atributos que almacena la tabla y la validacion a aplicar
-        String atributos = "DuenoMascota where ID=";
+        String atributos = "DuenoMascota where CEDULA=";
         
         // Variable valores que almacena el valor especifico de cedula que se desea borrar de la tabla
         String valores = cedula + ";";

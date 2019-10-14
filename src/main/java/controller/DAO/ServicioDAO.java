@@ -33,7 +33,7 @@ public class ServicioDAO {
     public static void borrarValoresServicio(String idServicio){
     
         String comando = "DELETE from ";
-        String atributos = "Servicio where ID=";
+        String atributos = "Servicio where IDSERVICIO=";
         String valores = idServicio + ";";
 
         
@@ -53,7 +53,7 @@ public class ServicioDAO {
            System.out.println("[ Base de Datos Abierta CORRECTAMENTE ]");
 
            stmt = c.createStatement();
-           ResultSet rs = stmt.executeQuery( "SELECT * FROM DuenoMascota;" );
+           ResultSet rs = stmt.executeQuery( "SELECT * FROM SERVICIO;" );
 
 
            while ( rs.next() ) {
