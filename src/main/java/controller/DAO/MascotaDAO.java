@@ -96,6 +96,8 @@ public class MascotaDAO {
                   mascota.setId(idMascota);
                   mascota.setNombre(nombre);
                   mascota.setTipoMascota(tipoMascota);
+                  mascota.setCedula(cedula);
+                  
                   
                   Expediente expediente = new Expediente();
                   expediente.setId(idExpediente);

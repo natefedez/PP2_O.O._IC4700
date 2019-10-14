@@ -19,6 +19,9 @@
                 String nombre = request.getParameter("nombre");
                 String tipo = request.getParameter("tipo");
                 String fecha = request.getParameter("fecha");
+                String id = request.getParameter("id");
+                
+                
             %>
             
             <form name="form" method="post" action="funcionesModificar/modificarMascota.jsp">
@@ -30,6 +33,8 @@
 
                 <p>Fecha de Nacimiento</p>
                 <input name="fecha" type="date" value="<%=fecha%>"><br>
+                
+                <input hidden name="id" value="<%=id%>"><br>
                 
                 <br><br><input class="button1" type="submit" value="Guardar Cambios" />
             </form>

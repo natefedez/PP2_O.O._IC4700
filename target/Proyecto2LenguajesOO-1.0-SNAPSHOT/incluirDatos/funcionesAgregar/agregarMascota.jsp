@@ -32,8 +32,9 @@
             mascota.setNombre(nombreString);
             mascota.setTipoMascota(tipoString);
             mascota.setFechaNacimiento(fecha);
+            mascota.setCedula(Integer.parseInt(cedula));
             
-            Controller.getInstance().setMascota(mascota, Integer.parseInt(cedula));
+            Controller.getInstance().setMascota(mascota);
         %>
         
         <%= cedula %>

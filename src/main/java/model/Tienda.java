@@ -8,8 +8,15 @@
  */
 package model;
 
+import java.util.ArrayList;
+import view.CompraDTO;
+
 public interface Tienda {
 
+    ArrayList<Producto> inventario = new ArrayList<>();
+    
+    public void eliminarProducto(int idProducto);
+    public void agregarProducto(Producto producto);
     
     
 }

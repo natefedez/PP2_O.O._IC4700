@@ -12,6 +12,7 @@
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/Veterinario.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/Tratamiento.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/controller/DAO/VeterinarioDAO.java
+/Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/Clinica.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/controller/DAO/ListaMedicamentos.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/controller/DAO/ProductoDAO.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/EspecialidadConcreta.java
@@ -22,6 +23,7 @@
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/controller/DAO/DuenoMascotaDAO.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/Expediente.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/controller/DAO/OperacionesBaseDatos.java
+/Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/SedeNegocio.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/Factura.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/controller/DAO/ServicioDAO.java
 /Users/kevinrojas/Documents/GitHub/Proyecto2LenguajesOO/src/main/java/model/ProductoVendido.java

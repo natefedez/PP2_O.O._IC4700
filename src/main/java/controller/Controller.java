@@ -26,14 +26,8 @@ import controller.DAO.*;
 
 public class Controller {
     
-    public Controller(){ // Constructor Controlador    
-        //OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
-        //OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
-        
-    }
     
     
-    private SimulDB db = new SimulDB(); //Temporal java class for simulating db
     
     //Se implementa el controlador como un singleton para ser accedido desde los jsp como una sola instancia.
     private static Controller controllerInstance = null;
@@ -44,7 +38,13 @@ public class Controller {
         }
         return controllerInstance; 
     }
- 
+    public Controller(){ // Constructor Controlador    
+        //OperacionesBaseDatos.crearBase(); // Llamada a metodo crearbase() que crea el la Base de Datos con la biblioteca SQLite
+        //OperacionesBaseDatos.crearTablas(); // Llamada al metodo crearTablas() que crea todas las tablas que requerirá el sistema
+        
+    }
+     
+     
     //Devuelve la lista de productos que se vendieron en ese rango de fechas.
     public ArrayList<ProductoVendido> listarProductos(Date fechaInicio, Date fechaFin){
         
@@ -116,12 +116,12 @@ public class Controller {
         ServicioDAO.insertarValoresServicio(nuevoServicio.getNombre());
         
     }
-    public void setMascota(Mascota nuevaMascota, int cedula){
+    public void setMascota(Mascota nuevaMascota){
         
         
         // Inserta valores en la tabla Producto por medio de llamada al metodo insertarValoresMascota
         // que recibe como parametro cedula del cliente, tipo de mascota, fecha nacimiento, nombre de la mascota
-        MascotaDAO.insertarValoresMascota(cedula, nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
+        MascotaDAO.insertarValoresMascota(nuevaMascota.getCedula(), nuevaMascota.getTipoMascota(), nuevaMascota.getNombre(), nuevaMascota.getFechaNacimiento());
         
     }
     public void setCliente(DuenoMascota nuevoCliente){
@@ -252,21 +252,8 @@ public class Controller {
     }
     public void upgradeMascota(Mascota mascota){
 
-        ArrayList<DuenoMascota> clientes = this.getAllClientes();
-        ArrayList<Mascota> mascotas = null;
-
-        int cedula = 888888888;
-        for (int i = 0; i < clientes.size(); i++) {
-            mascotas = clientes.get(i).getMascotas();
-
-            for (int j = 0; j < mascotas.size(); j++) {
-                if(mascotas.get(j).getId() == mascota.getId()){
-                    cedula = clientes.get(i).getCedula();
-                }
-            }
-        }
         deleteMascota(mascota.getId());
-        setMascota(mascota, 0);
+        setMascota(mascota);
     }
     
     public void upgradeCliente(DuenoMascota cliente){

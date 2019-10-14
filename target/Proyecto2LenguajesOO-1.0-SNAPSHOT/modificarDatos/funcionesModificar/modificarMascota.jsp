@@ -22,12 +22,13 @@
             String tipoString = request.getParameter("tipo");
             String nombreString = request.getParameter("nombre");
             String fechaString = request.getParameter("fecha");
-            
+            String idString = request.getParameter("id");
             
             
             Date fecha = new SimpleDateFormat("dd/MM/yyyy").parse(fechaString);
             
             Mascota mascota = new Mascota();
+            mascota.setId(Integer.parseInt(idString));
             mascota.setNombre(nombreString);
             mascota.setTipoMascota(tipoString);
             mascota.setFechaNacimiento(fecha);

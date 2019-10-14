@@ -18,6 +18,15 @@ public class Mascota {
     private String nombre;
     private Date fechaNacimiento;
     private Expediente expediente;
+    private int cedula;
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
     
     public Mascota(){};
     
@@ -33,7 +42,7 @@ public class Mascota {
     }
     public String getFechaNacimiento(){
         
-        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String strDate = dateFormat.format(fechaNacimiento); 
         
         return strDate;
