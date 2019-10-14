@@ -204,9 +204,28 @@ public class Controller {
         
         // Crea un nuevo arreglo que contiene objetos tipo 
         ArrayList<DuenoMascota> duenosMascotas = new ArrayList<>();
+        ArrayList<Mascota> mascotas = getAllMascotas();
         
         // LLamada al metodo estatico listarMascota para hacer un select de lo que contenga la tabla DuenoMascota
         DuenoMascotaDAO.listarDuenosMascota(duenosMascotas);
+        
+        //Asocia las mascotas con el dueno objeto
+        
+        for (int i = 0; i < duenosMascotas.size(); i++) {
+            ArrayList<Mascota> mascotasDeDueno = new ArrayList<>();
+        
+            for (int j = 0; j < mascotas.size(); j++) {
+                
+                if(mascotas.get(j).getCedula() == duenosMascotas.get(i).getCedula()){
+                    mascotasDeDueno.add(mascotas.get(j));
+                    
+                }
+            }
+            System.out.println(mascotasDeDueno.size());
+            duenosMascotas.get(i).setMascotas(mascotasDeDueno);
+        }
+        
+
         
         // Retorna el arreglo con objetos tipo DuenoMascota
         return duenosMascotas;

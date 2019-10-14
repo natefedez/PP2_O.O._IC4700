@@ -8,11 +8,11 @@ import model.Servicio;
 import model.Veterinario;
 
 public class CompraDTO {
-    ArrayList<Integer> productosId;
-    ArrayList<Integer> cantidadProducto;
-    ArrayList<Integer> serviciosId;
+    private ArrayList<Integer> productosId;
+    private ArrayList<Integer> cantidadProducto;
+    private ArrayList<Integer> serviciosId;
     
-    int cedulaDuenno;
+    private int cedulaDuenno;
 
 
     public ArrayList<Integer> getProductosId() {

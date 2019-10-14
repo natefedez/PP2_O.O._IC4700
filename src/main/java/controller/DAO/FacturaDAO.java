@@ -30,7 +30,7 @@ public class FacturaDAO {
 
         String comando = "INSERT INTO ";
         String atributos = "FACTURA (IDFACTURA,CEDULA,FECHA) ";
-        String valores =  "VALUES (" + idFactura + ", " + cedula + ", '" + fecha + "',);";
+        String valores =  "VALUES (" + idFactura + ", " + cedula + ", '" + fecha + "');";
         
         OperacionesBaseDatos.operacionesValoresTabla(comando, atributos, valores);
         

@@ -100,12 +100,13 @@
                 + "</table> ";
     %>
     <head>
-        <title><%= selected %> </title>
+        <title><%= cedula %> </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     
-    <body id="body" background="background.png">\
-        <h1>Tabla de todas las facturas de <%= selected %></h1>
+    <body id="body" background="background.png">
+        <h1>Tabla de todas las facturas de <%= cedula %></h1>
+        <%= html %>
     </body>
     
     
