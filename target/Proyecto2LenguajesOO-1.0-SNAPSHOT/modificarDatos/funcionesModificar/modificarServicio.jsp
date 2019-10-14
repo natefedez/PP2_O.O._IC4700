@@ -14,13 +14,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Servicio agregado</h1>
+        <h1>Servicio modificado</h1>
         <%
             String nombre = request.getParameter("nombre");
             Servicio servicio = new Servicio();
             servicio.setNombre(nombre);
             
-            Controller.getInstance().setServicio(servicio);
+            Controller.getInstance().upgradeServicio(servicio);
         %>
         
         <%= nombre %>

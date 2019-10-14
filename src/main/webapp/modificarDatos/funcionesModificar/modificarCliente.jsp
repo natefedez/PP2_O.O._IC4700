@@ -10,7 +10,7 @@
         <title>Agregar Cliente</title>
     </head>
     <body>
-        <h1>Cliente agregado</h1>
+        <h1>Cliente modificado</h1>
         <%
             String cedula = request.getParameter("cedula");
             String nombre = request.getParameter("nombre");
@@ -25,7 +25,7 @@
             nuevoDuenno.setDireccion(direccion);
             nuevoDuenno.setTelefono(Integer.parseInt(telefono));
             
-            Controller.getInstance().setCliente(nuevoDuenno);
+            Controller.getInstance().upgradeCliente(nuevoDuenno);
         %>
         
         <%= cedula %>

@@ -21,7 +21,7 @@
                 String fecha = request.getParameter("fecha");
             %>
             
-            <form name="form" method="post" action="../incluirDatos/funcionesAgregar/agregarMascota.jsp">
+            <form name="form" method="post" action="funcionesModificar/modificarMascota.jsp">
                 <p>Tipo de Mascota</p>
                 <input name="tipo" value="<%=tipo%>"><br>
 

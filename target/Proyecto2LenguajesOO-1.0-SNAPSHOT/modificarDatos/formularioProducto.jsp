@@ -21,7 +21,7 @@
                 String cantidad = request.getParameter("cantidad");
             %>
         
-            <form name="form" method="post" action="../incluirDatos/funcionesAgregar/agregarProducto.jsp">
+            <form name="form" method="post" action="funcionesModificar/modificarProducto.jsp">
                 <p>Nombre</p>
                 <input name="nombre" value="<%=nombre%>"><br>
 

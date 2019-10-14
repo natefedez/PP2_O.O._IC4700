@@ -23,7 +23,7 @@
         <div class="center" style="padding-left:16px">
             <h1>Formulario de veterinario nuevo</h1>
 
-            <form name="form" method="post" action="../incluirDatos/funcionesAgregar/agregarVeterinario.jsp">
+            <form name="form" method="post" action="funcionesModificar/modificarVeterinario.jsp
                 <p>Cedula</p>
                 <input name="cedula" value="<%=cedula%>"><br>
 

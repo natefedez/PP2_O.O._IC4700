@@ -14,7 +14,7 @@
         <title>Agregar Producto</title>
     </head>
     <body>
-        <h1>Producto agregado</h1>
+        <h1>Producto modificado</h1>
         <%
             String nombre = request.getParameter("nombre");
             String descripcion = request.getParameter("descripcion");
@@ -26,7 +26,7 @@
             producto.setDescripcion(descripcion);
             producto.setCantidadExistencia(Integer.parseInt(cantidad));
             
-            Controller.getInstance().setProducto(producto);
+            Controller.getInstance().upgradeProducto(producto);
         %>
         
         <%= nombre %>

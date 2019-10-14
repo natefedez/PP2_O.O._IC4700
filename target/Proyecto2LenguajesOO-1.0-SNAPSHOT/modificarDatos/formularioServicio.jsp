@@ -17,7 +17,7 @@
             <%
                 String nombre = request.getParameter("nombre");
             %>
-            <form name="form" method="post" action="../incluirDatos/funcionesAgregar/agregarServicio.jsp">
+            <form name="form" method="post" action="funcionesModificar/modificarServicio.jsp
                 <p>Nombre</p>
                 <input name="nombre" value="<%=nombre%>"><br>
 

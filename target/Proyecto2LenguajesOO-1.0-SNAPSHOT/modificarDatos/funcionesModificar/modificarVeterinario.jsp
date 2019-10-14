@@ -16,7 +16,7 @@
         <title>Agregar Veterinario</title>
     </head>
     <body>
-        <h1>Veterinario agregado</h1>
+        <h1>Veterinario modificado</h1>
         <%
             String cedula = request.getParameter("cedula");
             String nombre = request.getParameter("nombre");
@@ -38,7 +38,7 @@
             veterinario.setHorarioAtencion(horarioAtencion);
             
             
-            Controller.getInstance().setVeterinario(veterinario);
+            Controller.getInstance().upgradeVeterinario(veterinario);
         %>
         
         <%= cedula %>

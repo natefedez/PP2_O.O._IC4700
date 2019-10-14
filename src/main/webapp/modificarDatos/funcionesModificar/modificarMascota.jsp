@@ -17,13 +17,11 @@
     </head>
     </head>
     <body>
-        <h1>Mascota agregado</h1>
+        <h1>Mascota modificado</h1>
         <%
-            String duennoString = request.getParameter("duenoSelect");
             String tipoString = request.getParameter("tipo");
             String nombreString = request.getParameter("nombre");
             String fechaString = request.getParameter("fecha");
-            String cedula = request.getParameter("clienteSelect");
             
             
             
@@ -34,10 +32,9 @@
             mascota.setTipoMascota(tipoString);
             mascota.setFechaNacimiento(fecha);
             
-            Controller.getInstance().setMascota(mascota, Integer.parseInt(cedula));
+            Controller.getInstance().upgradeMascota(mascota);
         %>
         
-        <%= duennoString %>
         <%= nombreString %>
         <%= tipoString %>
         <%= fechaString %>
