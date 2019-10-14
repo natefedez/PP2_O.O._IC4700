@@ -123,8 +123,6 @@ public class OperacionesBaseDatos {
                           "(IdFactura INT PRIMARY KEY NOT NULL," +
                           "Cedula INT," + 
                           "Fecha CHAR(50)," + 
-                          "ListaProductos CHAR(50)," + 
-                          "Lista CHAR(50)," +
                           "FOREIGN KEY (Cedula) REFERENCES Persona(Cedula))"; 
             stmt.executeUpdate(sql); // Se ejecuta una actualizacion en la base de datos
             

@@ -13,7 +13,7 @@ import model.Producto;
 
 public class FacturaDAO {
     
-        public static void insertarValoresFactura(int cedula, Date fecha){
+        public static void insertarValoresFactura(int cedula, String fecha){
     
         
         Connection c;
@@ -27,7 +27,7 @@ public class FacturaDAO {
         String extensionId = Integer.toString(extension) + Integer.toString(id);
         
         int idFactura = Integer.parseInt(extensionId);
-        
+
         String comando = "INSERT INTO ";
         String atributos = "FACTURA (IDFACTURA,CEDULA,FECHA) ";
         String valores =  "VALUES (" + idFactura + ", " + cedula + ", '" + fecha + "',);";
@@ -48,7 +48,7 @@ public class FacturaDAO {
                System.out.println("[ Base de Datos Abierta CORRECTAMENTE ]");
 
                stmt = c.createStatement();
-               ResultSet rs = stmt.executeQuery( "SELECT * FROM Producto;" );
+               ResultSet rs = stmt.executeQuery( "SELECT * FROM Factura;" );
 
 
                while ( rs.next() ) {

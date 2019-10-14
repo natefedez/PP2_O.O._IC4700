@@ -22,6 +22,8 @@ import java.util.HashMap;
 import model.*;
 import view.CompraDTO;
 import controller.DAO.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 
 public class Controller {
@@ -74,7 +76,16 @@ public class Controller {
     
     //Devuelve todas las facturas de un cliente
     public ArrayList<Factura> listarFacturas(int cedulaCliente){
-        return null;
+        
+        ArrayList<Factura> facturas = this.getAllFacturas();
+        ArrayList<Factura> facturasAsociadasCliente = new ArrayList<>();
+        
+        for (int i = 0; i < facturas.size(); i++) {
+            if(facturas.get(i).getCedula() == cedulaCliente){
+                facturasAsociadasCliente.add(facturas.get(i));
+            }
+        }
+        return facturasAsociadasCliente;
     }
     
     //Devuelve una lista de todos los productos que se encuentran en el inventario, no los que ya se acabaron.
@@ -95,6 +106,11 @@ public class Controller {
         
         int cedula = compraDTO.getCedulaDuenno();
         
+        Date fechaDATE = new Date (System.currentTimeMillis());
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String fechaString = dateFormat.format(fechaDATE); 
+        
+        FacturaDAO.insertarValoresFactura(cedula, fechaString);
         
     }
 

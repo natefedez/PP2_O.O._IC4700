@@ -21,9 +21,7 @@
     
     <%
         
-        String selected = request.getParameter("facturaSelect");
-        
-        System.out.println("request: " + selected);
+        System.out.println("request: " + cedula);
 
         String html = " "
                 + "<table border=5 bordercolor=black background=black>"
